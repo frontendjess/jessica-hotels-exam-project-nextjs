@@ -1,9 +1,9 @@
-import { FooterContainer, FooterBottom } from './FooterElements';
+import { FooterContainer, FooterContent, FooterBottom } from './FooterElements';
 
 const Footer = () => {
 	return (
 		<FooterContainer>
-			<p>This is your footer</p>
+			<FooterContent />
 			<FooterBottom />
 		</FooterContainer>
 	);

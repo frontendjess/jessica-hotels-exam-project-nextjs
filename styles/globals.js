@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
         --font-size-xs: 0.444rem;
         --font-size-sm: 0.667rem;
         --font-size: 1rem;
+        --font-size-smd: 1.125rem;
         --font-size-md: 1.5rem;
         --font-size-lg: 2.25rem;
         --font-size-xl: 3.375rem;
@@ -40,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
 
         /* FONT WEIGHT */
         --font-weight-reg: 400;
+        --font-weight-semi-bold: 500;
         --font-weight-bold: 700;
 
         /* DESKTOP HEADINGS */
@@ -110,6 +112,10 @@ const GlobalStyle = createGlobalStyle`
     
     .inner-content-padding-btm {
         padding-bottom: 50px;
+    }
+
+    .inner-content-padding-sm-btm {
+        padding-bottom: 25px;
     }
 
     .padding-left-sm {
