@@ -9,18 +9,22 @@ const HeroContainer = styled.div`
 	flex-wrap: no-wrap;
 	justify-content: space-between;
 	align-items: center;
-	gap: 150px;
+	column-gap: 100px;
+	row-gap: 0;
 	position: relative;
 
 	${media.lessThan('large')`
         flex-wrap: wrap;
-        gap: 0;
+        row-gap: 100px;
     `}
 `;
 
 const HeroTitleContainer = styled.div`
-	border: solid 1px blue;
 	flex: 2 1 auto;
+
+	${media.lessThan('large')`
+            flex: 1 1 auto;
+        `}
 
 	h1 {
 		font-size: var(--h1-size);
@@ -44,9 +48,12 @@ const HeroTitleContainer = styled.div`
 `;
 
 const HeroSearchFormContainer = styled.div`
-	border: solid 1px blue;
 	flex: 1 1 auto;
-	width: 75%;
+	width: 35%;
+
+	${media.lessThan('large')`
+        width: 100%;
+    `}
 `;
 
 const HeroBlackBg = styled.div`
@@ -56,7 +63,7 @@ const HeroBlackBg = styled.div`
 `;
 
 const HeroCities = styled.div`
-	${media.lessThan('small')`
+	${media.lessThan('medium')`
         display: none;
     `}
 `;
@@ -71,6 +78,20 @@ const HeroCityLinks = styled.p`
 		width: 150px;
 		height: 5px;
 		background-color: var(--color-black);
+		margin-right: 15px;
+	}
+`;
+
+const HeroCityInactiveLinks = styled.p`
+	color: var(--color-gray);
+
+	::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 150px;
+		height: 5px;
+		background-color: var(--color-white);
 		margin-right: 15px;
 	}
 `;
@@ -92,9 +113,19 @@ const HeroCityGoteborg = styled.div`
 	left: 65%;
 
 	${media.lessThan('large')`
-        top: 10%;
-        left: 35%;
+        top: 50%;
+        left: 65%;
     `}
+`;
+
+const HeroCityMiami = styled.div`
+	position: absolute;
+	bottom: 15%;
+	left: 10%;
+`;
+
+const HeroCityComingSoonSpan = styled.span`
+	font-style: italic;
 `;
 
 export {
@@ -105,5 +136,8 @@ export {
 	HeroCities,
 	HeroCityOslo,
 	HeroCityLinks,
+	HeroCityInactiveLinks,
 	HeroCityGoteborg,
+	HeroCityMiami,
+	HeroCityComingSoonSpan,
 };

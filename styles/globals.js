@@ -74,6 +74,7 @@ const GlobalStyle = createGlobalStyle`
 
         /* COLORS */
         --color-black: #292929;
+        --color-gray: #C2C2C2;
         --color-white: #ffffff;
         --color-primary: #74B7A0;
         --color-secondary: #376C59;
