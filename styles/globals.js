@@ -131,9 +131,10 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 25px;
     }
 
-
-
-    
+    .oslo-hook {
+  
+    }
+   
 
 `;
 

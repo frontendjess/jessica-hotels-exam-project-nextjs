@@ -63,6 +63,10 @@ const HeroBlackBg = styled.div`
 `;
 
 const HeroCities = styled.div`
+	h6 {
+		font-size: var(--h6-mobile-size);
+	}
+
 	${media.lessThan('medium')`
         display: none;
     `}
@@ -122,6 +126,10 @@ const HeroCityMiami = styled.div`
 	position: absolute;
 	bottom: 15%;
 	left: 10%;
+
+	h6 {
+		color: var(--color-white);
+	}
 `;
 
 const HeroCityComingSoonSpan = styled.span`
