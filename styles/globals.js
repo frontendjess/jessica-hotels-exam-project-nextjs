@@ -109,7 +109,15 @@ const GlobalStyle = createGlobalStyle`
     .section {
         padding: 100px 0;
     }
-    
+
+    .section-padding-top {
+        padding-top: 100px;
+    }
+
+    .section-padding-btm {
+        padding-bottom: 100px;
+    }
+
     .inner-content-padding-btm {
         padding-bottom: 50px;
     }
@@ -122,10 +130,9 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 25px;
     }
 
-    /* FOOTER */
-    .footerBottomTitle {
-        font-size: var(--h2-size);
-    }
+
+
+    
 
 `;
 

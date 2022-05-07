@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Body from '../components/body/Body';
 import Header from '../components/header/Header';
 import Navbar from '../components/navbar/Navbar';
+import Main from '../components/main/Main';
+import Hero from '../components/hero/Hero';
 import Footer from '../components/footer/Footer';
 
 export default function Home() {
@@ -26,7 +28,10 @@ export default function Home() {
 				<Header>
 					<Navbar toggle={toggle} />
 				</Header>
-				<h1>You can do it Jess</h1>
+				<Main>
+					<Hero />
+					<h1>You can do it Jess</h1>
+				</Main>
 
 				<Footer />
 			</Body>

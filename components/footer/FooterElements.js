@@ -7,16 +7,18 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const FooterContainer = styled.footer`
 	width: 100%;
-	border: solid 1px yellow;
+	padding: 0 50px;
 `;
 
 const FooterRow = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 100px;
 
 	${media.lessThan('large')`
 		flex-direction: column;
+		gap: 0;
 	`}
 `;
 
@@ -24,6 +26,30 @@ const FooterLogoTitle = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	gap: 25px;
+
+	${media.lessThan('large')`
+		padding-bottom: 50px;
+	`};
+
+	${media.lessThan('small')`
+		flex-direction: column;
+	`}
+`;
+
+const FooterHolidazeTitle = styled.div`
+	h2 {
+		font-size: var(--h2-size);
+		letter-spacing: var(--letter-spacing-xxl);
+		color: var(--color-black);
+	}
+
+	${media.lessThan('large')`
+		h2 {
+			font-size: var(--h3-size);
+			letter-spacing: var(--letter-spacing-xl);
+		}
+	`}
 `;
 
 const FooterCompanyOf = styled.p`
@@ -69,6 +95,10 @@ const FooterLinks = styled.div`
 		line-height: var(--line-height-md);
 	}
 
+	a {
+		color: var(--color-black);
+	}
+
 	a:hover {
 		cursor: pointer;
 	}
@@ -76,7 +106,11 @@ const FooterLinks = styled.div`
 
 const FooterInputContainer = styled.div`
 	border: solid 1px var(--color-black);
-	width: 75%;
+	width: 65%;
+
+	${media.lessThan('small')`
+		width: 100%;
+	`}
 `;
 
 const FooterInput = styled.input`
@@ -86,9 +120,18 @@ const FooterInput = styled.input`
 	width: 90%;
 `;
 
+const FooterButton = styled.button`
+	background-color: transparent;
+	border: none;
+
+	a {
+		color: var(--color-black);
+	}
+`;
+
 const FooterContent = () => {
 	return (
-		<div className='inner-content-padding-btm'>
+		<div className='section-padding-top inner-content-padding-btm'>
 			<FooterContentRow>
 				<FooterContentColDouble>
 					<div className='inner-content-padding-sm-btm'>
@@ -96,9 +139,13 @@ const FooterContent = () => {
 					</div>
 					<FooterInputContainer>
 						<FooterInput type='text' placeholder='ENTER YOUR EMAIL ADDRESS' />
-						<button type='button'>
-							<FontAwesomeIcon icon={faArrowRight} />
-						</button>
+						<FooterButton type='button'>
+							<Link href='mailto:help@holidazehotelsproject.com'>
+								<a>
+									<FontAwesomeIcon icon={faArrowRight} />
+								</a>
+							</Link>
+						</FooterButton>
 					</FooterInputContainer>
 				</FooterContentColDouble>
 				<FooterContentColSingle>
@@ -106,6 +153,9 @@ const FooterContent = () => {
 						<FooterContentTitle>Site Links</FooterContentTitle>
 					</div>
 					<FooterLinks>
+						<Link href='/#Header'>
+							<a>Home</a>
+						</Link>
 						<Link href='/hotels'>
 							<a>Our Hotels</a>
 						</Link>
@@ -157,13 +207,15 @@ const FooterBottom = () => {
 			<FooterRow>
 				<FooterLogoTitle>
 					<Image
-						src='/images/navbar-logo.svg'
+						src='/images/footer-logo.svg'
 						alt='logo'
 						layout='fixed'
-						width={75}
-						height={75}
+						width={100}
+						height={100}
 					/>
-					<h1 className='footerBottomTitle padding-left-sm'>Holidaze</h1>
+					<FooterHolidazeTitle>
+						<h2>HOLIDAZE</h2>
+					</FooterHolidazeTitle>
 				</FooterLogoTitle>
 				<FooterCompanyOf>
 					This website was created for educational purposes - © Jessica Warr

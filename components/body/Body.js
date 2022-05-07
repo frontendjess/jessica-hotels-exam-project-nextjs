@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Body = styled.div`
 	width: 100vw;
-	padding: 0 50px;
+
 	min-height: 100vh;
 	background: url(images/bg.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
