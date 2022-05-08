@@ -7,6 +7,7 @@ import Navbar from '../components/navbar/Navbar';
 import Main from '../components/main/Main';
 import Hero from '../components/hero/Hero';
 import OurConcept from '../components/ourconcept/OurConcept';
+import FeatureHotel from '../components/featurehotel/FeatureHotel';
 import Footer from '../components/footer/Footer';
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
 				<Main>
 					<Hero />
 					<OurConcept />
+					<FeatureHotel />
 					<h1>You can do it Jess</h1>
 				</Main>
 

@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     :root {
         --font-body:  'Roboto Mono', monospace;
         --font-headings:  'Roboto Mono', monospace;
+        --font-secondary: 'Nothing You Could Do', cursive;
 
         /* FONT SIZES */
         --font-size-base: 16px;
@@ -12,13 +13,18 @@ const GlobalStyle = createGlobalStyle`
         --font-size-xs: 0.444rem;
         --font-size-sm: 0.667rem;
         --font-size: 1rem;
-        --font-size-smd: 1.125rem;
+        --font-size-xsmd: 1.125rem;
+        --font-size-smd: 1.25rem;
         --font-size-md: 1.5rem;
         --font-size-lg: 2.25rem;
         --font-size-xl: 3.375rem;
         --font-size-xxl: 5.063rem;
         --font-size-huge: 7.594rem;
         --font-size-jumbo: 11.391rem;
+
+        /* 1rem = 16px, 1.125rem = 18px, 1.25rem = 20px */
+        /* 1.5rem = 24px, 2.25rem = 36px, 3.375rem = 54px */
+        /* 5.063rem = 81px, 7.594rem = 121.50px, 11.391rem = 182.25px */
 
         /* LETTER SPACING */
         --letter-spacing-sm: 0.066rem;
@@ -32,6 +38,8 @@ const GlobalStyle = createGlobalStyle`
 
         /* LINE HEIGHT */
         --line-height-size: 25.6px;
+        --line-height-xsmd: 28.8px;
+        --line-height-smd: 32px;
         --line-height-md: 38.4px;
         --line-height-lg: 57.6px;
         --line-height-xl: 86.4px;
@@ -95,7 +103,6 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-size: 16px;
         font-family: 'Roboto Mono', monospace;
-
     }
 
     body {
@@ -108,15 +115,15 @@ const GlobalStyle = createGlobalStyle`
 
     /* MARGINS AND PADDINGS */
     .section {
-        padding: 100px 0;
+        padding: 150px 0;
     }
 
     .section-padding-top {
-        padding-top: 100px;
+        padding-top: 150px;
     }
 
     .section-padding-btm {
-        padding-bottom: 100px;
+        padding-bottom: 150px;
     }
 
     .inner-content-padding-btm {
@@ -132,10 +139,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .oslo-hook {
-  
+        width: 100%;
     }
-   
-
 `;
 
 export default GlobalStyle;

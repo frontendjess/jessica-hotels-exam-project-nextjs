@@ -3,12 +3,10 @@ import media from 'styled-media-query';
 
 const OurConceptContainer = styled.div`
 	background-color: var(--color-black);
-	height: 80vh;
 `;
 
 const OurConceptAboutContainer = styled.div`
-	padding: 0 50px;
-	border: solid 1px yellow;
+	padding: 0 50px 150px 50px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 50px;
@@ -36,24 +34,63 @@ const OurConceptAboutTitle = styled.div`
     `}
 `;
 
-const OurConceptAboutText = styled.div`
-	p {
-		letter-spacing: var(--letter-spacing-size);
-		color: var(--color-white);
+const OurConceptAboutText = styled.p`
+	color: var(--color-white);
+	font-size: var(--h5-size);
+	line-height: var(--line-height-md);
 
-		${media.greaterThan('large')`
-            font-size: var(--h5-size);
-            line-height: var(--line-height-md);
-            letter-spacing: var(--letter-spacing-md);
-        `}
+	${media.lessThan('large')`	
+	`}
+
+	${media.lessThan('small')`
+		font-size: var(--h6-size);
+		line-height: var(--line-height-smd);
+	`}
+`;
+
+const OurConceptImageGallery = styled.div`
+	height: 100vh;
+	background: url('https://images.unsplash.com/photo-1613906800797-d5d4fb2f7bbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+		center/cover no-repeat;
+`;
+
+const OurConceptFeauturesContainer = styled.div`
+	padding: 150px 50px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+`;
+
+const OurConceptFeaturesSignature = styled.div`
+	text-align: right;
+	font-family: var(--font-secondary);
+	font-size: var(--h3-size);
+	color: var(--color-white);
+
+	::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 300px;
+		height: 5px;
+		background-color: var(--color-primary);
+		margin-top: 10px;
+		margin-right: -200px;
+
+		${media.lessThan('medium')`
+			margin-right: -190px;
+			width: 275px;
+		`}
 
 		${media.lessThan('small')`
-            p {
-                font-size: var(--h6-mobile-size);
-                letter-spacing: var(--letter-spacing-size);
-            }
-        `}
+			width: 175px;
+			margin-right: -25px;
+		`}
 	}
+
+	${media.lessThan('medium')`
+		font-size: var(--h3-mobile-size);
+	`}
 `;
 
 export {
@@ -61,4 +98,7 @@ export {
 	OurConceptAboutContainer,
 	OurConceptAboutTitle,
 	OurConceptAboutText,
+	OurConceptImageGallery,
+	OurConceptFeauturesContainer,
+	OurConceptFeaturesSignature,
 };
