@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 const HeroContainer = styled.div`
 	width: 100%;
-	padding: 0 50px;
+	padding: 0 100px;
 	height: calc(100vh - 81px);
 	display: flex;
 	flex-wrap: no-wrap;

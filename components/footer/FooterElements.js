@@ -7,7 +7,11 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const FooterContainer = styled.footer`
 	width: 100%;
-	padding: 0 50px;
+	padding: 0 100px;
+
+	${media.lessThan('medium')`
+		padding: 0 25px;
+	`}
 `;
 
 const FooterRow = styled.div`

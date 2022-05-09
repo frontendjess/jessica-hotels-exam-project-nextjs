@@ -6,10 +6,14 @@ const OurConceptContainer = styled.div`
 `;
 
 const OurConceptAboutContainer = styled.div`
-	padding: 0 50px 150px 50px;
+	padding: 0 100px 150px 100px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 50px;
+
+	${media.lessThan('medium')`
+		padding: 0 25px 150px 25px;
+	`}
 `;
 
 const OurConceptAboutTitle = styled.div`
@@ -55,10 +59,14 @@ const OurConceptImageGallery = styled.div`
 `;
 
 const OurConceptFeauturesContainer = styled.div`
-	padding: 150px 50px;
+	padding: 150px 100px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 50px;
+
+	${media.lessThan('medium')`
+		padding: 150px 25px;
+	`}
 `;
 
 const OurConceptFeaturesSignature = styled.div`
@@ -79,11 +87,11 @@ const OurConceptFeaturesSignature = styled.div`
 
 		${media.lessThan('medium')`
 			margin-right: -190px;
-			width: 275px;
+			width: 225px;
 		`}
 
 		${media.lessThan('small')`
-			width: 175px;
+			width: 150px;
 			margin-right: -25px;
 		`}
 	}

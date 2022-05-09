@@ -5,6 +5,7 @@ import {
 	FeatureHotelTitle,
 	FeatureHotelImage,
 	FeatureHotelName,
+	ButtonContainer,
 	Button,
 } from './FeatureHotelElements';
 
@@ -15,10 +16,18 @@ function FeatureHotel() {
 				<FeatureHotelContentContainer>
 					<FeatureHotelTitle>Hotel of the Week_</FeatureHotelTitle>
 					<FeatureHotelImage>
-						<FeatureHotelName>Hotel Frantz, Gøteborg Sweden</FeatureHotelName>
-						<Link href='/hotelfrank'>
-							<Button primary>Link</Button>
-						</Link>
+						<FeatureHotelName>
+							<h2>Hotel Frantz, Gøteborg Sweden</h2>
+							<ButtonContainer>
+								{' '}
+								<Button>
+									{' '}
+									<Link href='/hotelfrantz'>
+										<a>View This Location</a>
+									</Link>
+								</Button>
+							</ButtonContainer>
+						</FeatureHotelName>
 					</FeatureHotelImage>
 				</FeatureHotelContentContainer>
 			</FeatureHotelContainer>
