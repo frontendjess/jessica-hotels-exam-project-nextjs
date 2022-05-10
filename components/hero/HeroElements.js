@@ -17,6 +17,10 @@ const HeroContainer = styled.div`
         flex-wrap: wrap;
         row-gap: 100px;
     `}
+
+	${media.lessThan('medium')`
+		padding: 0 25px;
+	`}
 `;
 
 const HeroTitleContainer = styled.div`

@@ -20,7 +20,7 @@ function FeatureHotel() {
 							<h2>Hotel Frantz, Gøteborg Sweden</h2>
 							<ButtonContainer>
 								{' '}
-								<Button>
+								<Button primary>
 									{' '}
 									<Link href='/hotelfrantz'>
 										<a>View This Location</a>

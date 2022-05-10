@@ -10,7 +10,6 @@ const FeatureHotelContentContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	row-gap: 50px;
-	border: solid 1px yellow;
 `;
 
 const FeatureHotelTitle = styled.h2`
@@ -51,7 +50,6 @@ const FeatureHotelName = styled.div`
 	text-align: center;
 	position: absolute;
 	bottom: -150px;
-	border: solid 1px blue;
 	display: flex;
 	flex-direction: column;
 	gap: 50px;
@@ -86,13 +84,32 @@ const ButtonContainer = styled.div``;
 
 const Button = styled.button`
 	/* Adapt the colors based on primary prop */
-	background: ${(props) => (props.primary ? 'palevioletred' : 'white')};
-	color: ${(props) => (props.primary ? 'white' : 'palevioletred')};
+	background: ${(props) =>
+		props.primary ? 'var(--color-button-primary)' : 'white'};
 
-	font-size: 1em;
-	padding: 0.25em 1em;
-	border: 2px solid palevioletred;
-	border-radius: 3px;
+	font-size: 1rem;
+	padding: 1.15rem 1.75rem;
+	border: none;
+	border-radius: 0px;
+	transition: all 0.11s ease-out;
+
+	:hover {
+		border: 1px solid var(--color-black);
+		transform: translate(-0.25rem, -0.25rem);
+		box-shadow: 0.25rem 0.25rem #000;
+	}
+
+	a {
+		color: var(--color-black);
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: var(--font-body);
+		font-size: var(--font-size);
+		letter-spacing: var(--letter-spacing-size);
+
+		:hover {
+		}
+	}
 `;
 
 export {

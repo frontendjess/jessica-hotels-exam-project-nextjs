@@ -9,6 +9,10 @@ const Header = styled.div`
 	wrap: no-wrap;
 	justify-content: space-between;
 	align-items: center;
+
+	${media.lessThan('medium')`
+		padding: 0 25px;
+	`}
 `;
 
 export default Header;
