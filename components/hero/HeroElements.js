@@ -90,7 +90,21 @@ const HeroCityLinks = styled.p`
 	}
 `;
 
-const HeroCityInactiveLinks = styled.p`
+const HeroCityLinksInactive = styled.p`
+	color: var(--color-black);
+
+	::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 150px;
+		height: 5px;
+		background-color: var(--color-black);
+		margin-right: 15px;
+	}
+`;
+
+const HeroCityInactiveLinksGray = styled.p`
 	color: var(--color-gray);
 
 	::before {
@@ -148,7 +162,8 @@ export {
 	HeroCities,
 	HeroCityOslo,
 	HeroCityLinks,
-	HeroCityInactiveLinks,
+	HeroCityLinksInactive,
+	HeroCityInactiveLinksGray,
 	HeroCityGoteborg,
 	HeroCityMiami,
 	HeroCityComingSoonSpan,

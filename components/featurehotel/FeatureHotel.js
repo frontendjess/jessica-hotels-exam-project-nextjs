@@ -17,7 +17,7 @@ function FeatureHotel() {
 					<FeatureHotelTitle>Hotel of the Week_</FeatureHotelTitle>
 					<FeatureHotelImage>
 						<FeatureHotelName>
-							<h2>Hotel Frantz, Gøteborg Sweden</h2>
+							<h2>Hotel Frantz, Oslo Norway</h2>
 							<ButtonContainer>
 								{' '}
 								<Button primary>

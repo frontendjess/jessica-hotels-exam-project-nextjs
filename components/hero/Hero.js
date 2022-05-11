@@ -11,7 +11,8 @@ import {
 	HeroCityGoteborg,
 	HeroCityMiami,
 	HeroCityLinks,
-	HeroCityInactiveLinks,
+	HeroCityLinksInactive,
+	HeroCityInactiveLinksGray,
 	HeroCityComingSoonSpan,
 } from './HeroElements';
 
@@ -48,11 +49,12 @@ function Hero() {
 						)}
 					</HeroCityOslo>
 					<HeroCityGoteborg>
-						<HeroCityLinks
+						<HeroCityLinksInactive
 							onMouseEnter={() => setIsGoteborgShowing(true)}
 							onMouseLeave={() => setIsGoteborgShowing(false)}>
-							Gøteborg, Sweden_
-						</HeroCityLinks>
+							Gøteborg, Sweden_{' '}
+							<HeroCityComingSoonSpan>Coming Soon</HeroCityComingSoonSpan>
+						</HeroCityLinksInactive>
 						{isGoteborgShowing && (
 							<div className='oslo-hook'>
 								<img
@@ -60,7 +62,7 @@ function Hero() {
 									alt='Gøteborg landscape of buildings'
 									width='250px'
 								/>
-								<h6>6 curated hotels available</h6>
+								<h6>Gøteborg curated hotels in the works</h6>
 							</div>
 						)}
 					</HeroCityGoteborg>
@@ -75,12 +77,12 @@ function Hero() {
 								<h6>Miami curated hotels in the works</h6>
 							</div>
 						)}
-						<HeroCityInactiveLinks
+						<HeroCityInactiveLinksGray
 							onMouseEnter={() => setIsMiamiShowing(true)}
 							onMouseLeave={() => setIsMiamiShowing(false)}>
 							Miami, USA_{' '}
 							<HeroCityComingSoonSpan>Coming Soon</HeroCityComingSoonSpan>
-						</HeroCityInactiveLinks>
+						</HeroCityInactiveLinksGray>
 					</HeroCityMiami>
 				</HeroCities>
 			</HeroContainer>

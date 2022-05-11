@@ -36,7 +36,7 @@ const Navbar = ({ toggle }) => {
 						</Link>
 					</Navlink>
 					<Navlink>
-						<Link href='/adminlogin'>
+						<Link href='/login'>
 							<a>Admin Login</a>
 						</Link>
 					</Navlink>

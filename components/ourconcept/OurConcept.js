@@ -37,8 +37,8 @@ function OurConcept() {
 						Curated collection of hotels for the urban traveller. Merging the
 						golden era of travel with today&apos;s innovation, sustainability,
 						authenticity and comfort. Stay at one of our locations for the
-						Holidaze experience. We are currently launched in the cities of Oslo
-						and Gøteborg. More locations coming soon.{' '}
+						Holidaze experience. We are currently launched in the city of Oslo.
+						More locations coming soon.{' '}
 					</OurConceptAboutText>
 				</OurConceptAboutContainer>
 				<OurConceptImageGallery />
