@@ -97,6 +97,7 @@ const Button = styled.button`
 		border: 1px solid var(--color-black);
 		transform: translate(-0.25rem, -0.25rem);
 		box-shadow: 0.25rem 0.25rem #000;
+		cursor: pointer;
 	}
 
 	a {
@@ -106,9 +107,6 @@ const Button = styled.button`
 		font-family: var(--font-body);
 		font-size: var(--font-size);
 		letter-spacing: var(--letter-spacing-size);
-
-		:hover {
-		}
 	}
 `;
 

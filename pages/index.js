@@ -34,7 +34,6 @@ export default function Home() {
 					<Hero />
 					<OurConcept />
 					<FeatureHotel />
-					<h1>You can do it Jess</h1>
 				</Main>
 
 				<Footer />

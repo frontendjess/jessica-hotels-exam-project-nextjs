@@ -127,6 +127,10 @@ const GlobalStyle = createGlobalStyle`
         padding-bottom: 150px;
     }
 
+    .inner-content-padding-top {
+        padding-top: 50px;
+    }
+
     .inner-content-padding-btm {
         padding-bottom: 50px;
     }
@@ -142,6 +146,8 @@ const GlobalStyle = createGlobalStyle`
     .oslo-hook {
         width: 100%;
     }
+
+
 `;
 
 export default GlobalStyle;
