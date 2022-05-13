@@ -20,7 +20,7 @@ function OurConcept() {
 					<OurConceptAboutRow>
 						<OurConceptAboutCol>
 							<OurConceptAboutTitle className='inner-content-padding-btm'>
-								For the Urban Traveller_
+								For the Urban Traveler_
 							</OurConceptAboutTitle>
 						</OurConceptAboutCol>
 						<OurConceptAboutCol>
@@ -34,7 +34,7 @@ function OurConcept() {
 					</OurConceptAboutRow>
 
 					<OurConceptAboutText className='urban-traveller-text'>
-						Curated collection of hotels for the urban traveller. Merging the
+						Curated collection of hotels for the urban traveler. Merging the
 						golden era of travel with today&apos;s innovation, sustainability,
 						authenticity and comfort. Stay at one of our locations for the
 						Holidaze experience. We are currently launched in the city of Oslo.

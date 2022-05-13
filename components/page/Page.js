@@ -14,10 +14,10 @@ function Page({ title, children }) {
 	return (
 		<>
 			<Head>
-				<title>{title} - Hotels for the Urban Traveller</title>
+				<title>{title} - Hotels for the Urban Traveler</title>
 				<meta
 					name='description'
-					content='Holidaze - Hotels for the Urban Traveller'
+					content='Holidaze - Hotels for the Urban Traveler'
 				/>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
