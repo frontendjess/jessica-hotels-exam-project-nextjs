@@ -1,19 +1,15 @@
 import axios from 'axios';
-
-axios
-	.get('https://hotels-api-holidaze-jessica.herokuapp.com/api/hotels')
-	.then((response) => {
-		console.log(response);
-		console.log(response.data);
-	});
+import Page from '../../components/page/Page';
 
 function index({ hotels }) {
 	return (
 		<>
-			<h2>List of hotels</h2>
-			{hotels.map((hotel) => (
-				<li key={hotel.id}>Hotel {hotel.attributes.title}</li>
-			))}
+			<Page title='Our curated hotels'>
+				<h2>List of hotels</h2>
+				{hotels.map((hotel) => (
+					<li key={hotel.id}>Hotel {hotel.attributes.title}</li>
+				))}
+			</Page>
 		</>
 	);
 }

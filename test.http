@@ -1,1 +1,17 @@
-GET https://hotels-api-holidaze-jessica.herokuapp.com/api/hotels
+GET http://localhost:1337/api/hotels
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNTEzMTQwLCJleHAiOjE2NTUxMDUxNDB9.OaAbKTBVpqV2vYTvX7C0-pd6_NQ2TlBdr0oJxzSoeC0
+###
+
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+    "identifier": "admin@admin.com",
+    "password": "#Admin1234"
+}
+
+###
+
+GET http://localhost:1337/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNTEzMTQwLCJleHAiOjE2NTUxMDUxNDB9.OaAbKTBVpqV2vYTvX7C0-pd6_NQ2TlBdr0oJxzSoeC0
+
