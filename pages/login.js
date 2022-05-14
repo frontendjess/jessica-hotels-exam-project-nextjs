@@ -18,6 +18,8 @@ export default function AdminLogin() {
 			.then((res) => {
 				if (res.status === 200) {
 					console.log(res.data);
+					localStorage.setItem('jwt', res.data.jwt);
+					localStorage.setItem('user', JSON.stringify(res.data.user));
 					window.location = '/dashboard';
 				} else {
 					console.log(res.data.error);
