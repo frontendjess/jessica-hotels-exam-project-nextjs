@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Page from '../components/page/Page';
-import LoginContainer from '../components/login/LoginElements';
+import {
+	LoginContainer,
+	LoginAlertContainer,
+} from '../components/login/LoginElements';
 
 export default function AdminLogin() {
 	const [email, setEmail] = useState('');
@@ -27,6 +30,7 @@ export default function AdminLogin() {
 			})
 			.catch((err) => {
 				console.log(err.response.data.error);
+				alert('Invalid email address or password');
 			});
 	};
 
@@ -34,26 +38,32 @@ export default function AdminLogin() {
 		<>
 			<Page title='Admin login'>
 				<LoginContainer>
+					<h1>Admin Login</h1>
 					<form onSubmit={handleSubmit}>
-						<label label='Email'>
+						<label htmlFor='email' label='Email'>
 							Email
 							<input
 								type='email'
+								name='email'
+								id='email'
 								required
 								value={email}
 								onChange={(event) => setEmail(event.target.value)}
 							/>
 						</label>
-						<label label='Password'>
+						<label htmlFor='password' label='Password'>
 							Password
 							<input
 								type='password'
+								name='password'
+								id='password'
 								required
 								value={password}
 								onChange={(event) => setPassword(event.target.value)}
 							/>
 						</label>
 						<button type='submit'>Sign In</button>
+						<LoginAlertContainer></LoginAlertContainer>
 					</form>
 				</LoginContainer>
 			</Page>

@@ -88,6 +88,7 @@ const GlobalStyle = createGlobalStyle`
         --color-secondary: #376C59;
         --color-tertiary: #DB4941;
         --color-button-primary: rgba(116, 183, 160, 0.4);
+        --color-white-bg: rgba(255, 255, 255, 0.4);
     }
 
 
@@ -145,6 +146,14 @@ const GlobalStyle = createGlobalStyle`
 
     .oslo-hook {
         width: 100%;
+    }
+
+    /* ICONS */
+
+    .features-icon {
+        width: 32px;
+        height: 32px;
+
     }
 
 

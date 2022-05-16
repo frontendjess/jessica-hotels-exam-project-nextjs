@@ -9,4 +9,8 @@ const LoginContainer = styled.div`
     `}
 `;
 
-export default LoginContainer;
+const LoginAlertContainer = styled.div`
+	width: 100%;
+`;
+
+export { LoginContainer, LoginAlertContainer };

@@ -21,7 +21,7 @@ const Navbar = ({ toggle }) => {
 
 				<Navlinks>
 					<Navlink>
-						<Link href='/#Header'>
+						<Link href='/'>
 							<a>Home</a>
 						</Link>
 					</Navlink>
