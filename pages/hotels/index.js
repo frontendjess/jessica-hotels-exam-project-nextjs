@@ -1,11 +1,13 @@
 import axios from 'axios';
 import Page from '../../components/page/Page';
+import HotelsHero from '../../components/hotels/HotelsHero';
 import AlwaysAtHolidaze from '../../components/alwaysatholidaze/AlwaysAtHolidaze';
 
 function index({ hotels }) {
 	return (
 		<>
 			<Page title='Our Curated Hotels'>
+				<HotelsHero />
 				<AlwaysAtHolidaze />
 				<h2>List of hotels</h2>
 				{hotels.map((hotel) => (

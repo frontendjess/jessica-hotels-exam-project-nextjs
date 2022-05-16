@@ -44,6 +44,7 @@ const AlwaysAtHolidazeHeading = styled.div`
 	text-transform: uppercase;
 
 	h5 {
+		color: var(--color-black);
 		font-size: var(--h5-size);
 		text-transform: uppercase;
 		letter-spacing: var(--letter-spacing-md);
