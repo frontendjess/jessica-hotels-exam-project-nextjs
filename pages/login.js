@@ -5,6 +5,7 @@ import {
 	LoginContainer,
 	LoginAlertContainer,
 } from '../components/login/LoginElements';
+import { BASE_URL } from '../configs/configs';
 
 export default function AdminLogin() {
 	const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ export default function AdminLogin() {
 		event.preventDefault();
 
 		axios
-			.post('http://localhost:1337/api/auth/local', {
+			.post(`${BASE_URL}/api/auth/local`, {
 				identifier: email,
 				password,
 			})

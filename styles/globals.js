@@ -162,6 +162,11 @@ const GlobalStyle = createGlobalStyle`
 
     }
 
+    .specific-hotel-container {
+        width: 100%;
+        height: 70vh;
+    }
+
 
 `;
 

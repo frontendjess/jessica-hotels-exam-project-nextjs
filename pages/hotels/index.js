@@ -12,6 +12,7 @@ import {
 	HotelsSpecificButton,
 } from '../../components/hotels/HotelsElements';
 import AlwaysAtHolidaze from '../../components/alwaysatholidaze/AlwaysAtHolidaze';
+import { BASE_URL } from '../../configs/configs';
 
 function index({ hotels }) {
 	return (
@@ -60,7 +61,7 @@ function index({ hotels }) {
 }
 
 export async function getServerSideProps() {
-	const res = await axios.get('http://localhost:1337/api/hotels');
+	const res = await axios.get(`${BASE_URL}/api/hotels`);
 	const hotels = res.data.data;
 
 	return {
