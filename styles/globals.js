@@ -115,6 +115,11 @@ const GlobalStyle = createGlobalStyle`
         max-width: 100%;
     }
 
+    p {
+        font-size: var(--font-size);
+        line-height: var(--line-height-size);
+    }
+
     /* MARGINS AND PADDINGS */
     .section {
         padding: 150px 0;

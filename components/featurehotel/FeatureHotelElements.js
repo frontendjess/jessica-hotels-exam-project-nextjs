@@ -39,8 +39,7 @@ const FeatureHotelTitle = styled.h2`
 
 const FeatureHotelImage = styled.div`
 	height: 100vh;
-	background: url('https://raw.githubusercontent.com/frontendjess/hotelsProjectImages/main/img/hotel01.jpg')
-		center/cover no-repeat;
+	background: url('/images/hotels/hotelshero.jpg') center/cover no-repeat;
 	position: relative;
 `;
 
@@ -80,7 +79,9 @@ const FeatureHotelName = styled.div`
 	}
 `;
 
-const ButtonContainer = styled.div``;
+const ButtonContainer = styled.div`
+	width: 100%;
+`;
 
 const Button = styled.button`
 	/* Adapt the colors based on primary prop */

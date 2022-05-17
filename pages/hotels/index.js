@@ -1,6 +1,16 @@
 import axios from 'axios';
+import Link from 'next/link';
 import Page from '../../components/page/Page';
 import HotelsHero from '../../components/hotels/HotelsHero';
+import {
+	HotelsContainer,
+	HotelsDataContainer,
+	HotelsDataCol,
+	HotelsDataTitle,
+	HotelsDataLocation,
+	HotelsButtons,
+	HotelsSpecificButton,
+} from '../../components/hotels/HotelsElements';
 import AlwaysAtHolidaze from '../../components/alwaysatholidaze/AlwaysAtHolidaze';
 
 function index({ hotels }) {
@@ -9,12 +19,41 @@ function index({ hotels }) {
 			<Page title='Our Curated Hotels'>
 				<HotelsHero />
 				<AlwaysAtHolidaze />
-				<h2>List of hotels</h2>
-				{hotels.map((hotel) => (
-					<li key={hotel.id}>
-						{hotel.attributes.title} {hotel.attributes.city}
-					</li>
-				))}
+				<HotelsContainer>
+					<HotelsDataContainer>
+						{hotels.map((hotel) => (
+							<HotelsDataCol key={hotel.id}>
+								<div>
+									<img
+										src={hotel.attributes.image}
+										alt={hotel.attributes.title}
+									/>
+								</div>
+								<HotelsDataTitle>{hotel.attributes.title}</HotelsDataTitle>
+								<HotelsDataLocation>
+									{hotel.attributes.city}, {hotel.attributes.country}
+								</HotelsDataLocation>
+								<div>
+									<p>{hotel.attributes.description}</p>
+								</div>
+								<HotelsButtons>
+									<HotelsSpecificButton primary>
+										{' '}
+										<Link href={`/hotels/${hotel.id}`}>
+											<a>Book This Hotel</a>
+										</Link>
+									</HotelsSpecificButton>
+									<HotelsSpecificButton>
+										{' '}
+										<Link href={`/hotels/${hotel.id}`}>
+											<a>View This Hotel</a>
+										</Link>
+									</HotelsSpecificButton>
+								</HotelsButtons>
+							</HotelsDataCol>
+						))}
+					</HotelsDataContainer>
+				</HotelsContainer>
 			</Page>
 		</>
 	);
