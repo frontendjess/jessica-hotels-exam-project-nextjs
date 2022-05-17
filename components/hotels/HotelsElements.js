@@ -67,7 +67,9 @@ const HotelsButtons = styled.div`
 const HotelsSpecificButton = styled.button`
 	/* Adapt the colors based on primary prop */
 	background: ${(props) =>
-		props.primary ? 'var(--color-button-primary)' : 'white'};
+		props.primary
+			? 'var(--color-button-primary)'
+			: 'var(--color-button-secondary)'};
 
 	font-size: 1rem;
 	padding: 1.15rem 1.75rem;
