@@ -10,6 +10,9 @@ import {
 	SpecificHotelDatePickerContainer,
 	SpecificHotelDatePickerCol,
 	SpecificHotelDataContainer,
+	DataPickerLabelCol,
+	DataPickerLabel,
+	DatePickerButton,
 } from '../../components/specifichotel/SpecificHotelElements';
 import { useState } from 'react';
 import Select from 'react-select';
@@ -84,25 +87,47 @@ export default function SpecificHotel({ hotelData }) {
 					</SpecificHotelHeroTitle>
 				</SpecificHotelHeroContainer>
 				<SpecificHotelContainer>
-					<SpecificHotelDatePickerContainer>
-						<SpecificHotelDatePickerCol>
-							<label htmlFor='checkin'>Check In:</label>
-							<input type='date' id='checkin' name='checkin' />
-						</SpecificHotelDatePickerCol>
-						<SpecificHotelDatePickerCol>
-							<label htmlFor='checkout'>Check Out:</label>
-							<input type='date' id='checkout' name='checkout' />
-						</SpecificHotelDatePickerCol>
-						<SpecificHotelDatePickerCol>
-							<label htmlFor='guestselect'>Guests:</label>
-							{GuestSelect()}
-						</SpecificHotelDatePickerCol>
-						<SpecificHotelDatePickerCol>
-							<label htmlFor='hotelroomselect'>Room:</label>
-							{HotelRoomSelect()}
-						</SpecificHotelDatePickerCol>
-						<SpecificHotelDatePickerCol>1</SpecificHotelDatePickerCol>
-					</SpecificHotelDatePickerContainer>
+					<form>
+						<SpecificHotelDatePickerContainer>
+							<SpecificHotelDatePickerCol>
+								<DataPickerLabelCol>
+									<DataPickerLabel htmlFor='checkin'>Check In</DataPickerLabel>
+								</DataPickerLabelCol>
+								<div>
+									<input type='date' id='checkin' name='checkin' />
+								</div>
+							</SpecificHotelDatePickerCol>
+							<SpecificHotelDatePickerCol>
+								<DataPickerLabelCol>
+									<DataPickerLabel htmlFor='checkout'>
+										Check Out
+									</DataPickerLabel>
+								</DataPickerLabelCol>
+								<div>
+									<input type='date' id='checkout' name='checkout' />
+								</div>
+							</SpecificHotelDatePickerCol>
+							<SpecificHotelDatePickerCol>
+								<DataPickerLabelCol>
+									<DataPickerLabel htmlFor='guestselect'>
+										Guests
+									</DataPickerLabel>
+								</DataPickerLabelCol>
+								<div>{GuestSelect()}</div>
+							</SpecificHotelDatePickerCol>
+							<SpecificHotelDatePickerCol>
+								<DataPickerLabelCol>
+									<DataPickerLabel htmlFor='hotelroomselect'>
+										Room
+									</DataPickerLabel>
+								</DataPickerLabelCol>
+								<div>{HotelRoomSelect()}</div>
+							</SpecificHotelDatePickerCol>
+							<SpecificHotelDatePickerCol>
+								<DatePickerButton primary>Check Availability</DatePickerButton>
+							</SpecificHotelDatePickerCol>
+						</SpecificHotelDatePickerContainer>{' '}
+					</form>
 				</SpecificHotelContainer>
 			</Page>
 		</>
