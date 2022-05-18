@@ -14,6 +14,10 @@ import {
 	DataPickerLabel,
 	DatePickerButton,
 	DataPickerInput,
+	SpecificHotelDataLeftCol,
+	SpecificHotelDataRightCol,
+	RoomList,
+	RoomPhoto,
 } from '../../components/specifichotel/SpecificHotelElements';
 import { useState } from 'react';
 import Select from 'react-select';
@@ -128,7 +132,31 @@ export default function SpecificHotel({ hotelData }) {
 								<DatePickerButton primary>Check Availability</DatePickerButton>
 							</SpecificHotelDatePickerCol>
 						</SpecificHotelDatePickerContainer>{' '}
-					</form>
+					</form>{' '}
+					<SpecificHotelDataContainer>
+						<SpecificHotelDataLeftCol>
+							<h2>{hotelData.attributes.title}</h2>
+							<h6>
+								{hotelData.attributes.city}, {hotelData.attributes.country}
+							</h6>
+							<ul>
+								<RoomList>Standard Room</RoomList>
+								<RoomList>Deluxe Room</RoomList>
+								<RoomList>Junior Suite</RoomList>
+								<RoomList>Presidential Suite</RoomList>
+							</ul>
+							<h5>About This Hotel</h5>
+							<p>{hotelData.attributes.description}</p>
+						</SpecificHotelDataLeftCol>
+						<SpecificHotelDataRightCol>
+							<RoomPhoto>
+								<img
+									src={hotelData.attributes.image}
+									alt={hotelData.attributes.title}
+								/>
+							</RoomPhoto>
+						</SpecificHotelDataRightCol>
+					</SpecificHotelDataContainer>
 				</SpecificHotelContainer>
 			</Page>
 		</>

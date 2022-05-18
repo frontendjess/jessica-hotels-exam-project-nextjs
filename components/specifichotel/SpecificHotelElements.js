@@ -31,6 +31,10 @@ const SpecificHotelHeroTitle = styled.h1`
 
 const SpecificHotelContainer = styled.div`
 	padding: 100px 100px 0 100px;
+
+	${media.lessThan('medium')`
+		padding: 100px 25px;
+	`}
 `;
 
 const SpecificHotelDatePickerContainer = styled.div`
@@ -39,6 +43,7 @@ const SpecificHotelDatePickerContainer = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 50px;
+	padding-bottom: 100px;
 `;
 
 const SpecificHotelDatePickerCol = styled.div`
@@ -64,8 +69,6 @@ const DataPickerInput = styled.input`
 	text-align: center;
 	border: solid 1px hsl(0, 0%, 80%);
 `;
-
-const SpecificHotelDataContainer = styled.div``;
 
 const DatePickerButton = styled.button`
 	width: 100%;
@@ -97,6 +100,71 @@ const DatePickerButton = styled.button`
 	}
 `;
 
+const SpecificHotelDataContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 100px;
+
+	h2 {
+		font-size: var(--h2-size);
+		text-transform: uppercase;
+		letter-spacing: var(--letter-spacing-xxl);
+		line-height: var(--line-height-xxl);
+	}
+
+	h5 {
+		padding: 50px 0 25px 0;
+		font-size: var(--h5-size);
+		text-transform: uppercase;
+		letter-spacing: var(--letter-spacing-md);
+		line-height: var(--line-height-md);
+	}
+
+	h6 {
+		font-size: var(--h6-size);
+		color: var(--color-tertiary);
+	}
+`;
+
+const SpecificHotelDataLeftCol = styled.div`
+	flex: 1 0 300px;
+`;
+
+const SpecificHotelDataRightCol = styled.div`
+	flex: 2 0 300px;
+`;
+
+const RoomList = styled.li`
+	list-style: none;
+	padding-top: 25px;
+	::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 50px;
+		height: 5px;
+		background-color: var(--color-black);
+		margin-right: 32px;
+	}
+`;
+
+const RoomPhoto = styled.div`
+	width: 100%;
+	::before {
+		content: '';
+		display: inline-block;
+		vertical-align: top;
+		width: 150px;
+		height: 5px;
+		background-color: var(--color-primary);
+		margin-top: 0px;
+
+	}
+}
+`;
+
 export {
 	SpecificHotelHeroContainer,
 	SpecificHotelHeroTitle,
@@ -108,4 +176,8 @@ export {
 	DataPickerLabel,
 	DatePickerButton,
 	DataPickerInput,
+	SpecificHotelDataLeftCol,
+	SpecificHotelDataRightCol,
+	RoomList,
+	RoomPhoto,
 };
