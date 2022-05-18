@@ -70,7 +70,6 @@ export default function SpecificHotel({ hotelData }) {
 			theme={(theme) => ({
 				...theme,
 				borderRadius: 0,
-
 				colors: {
 					...theme.colors,
 					primary25: 'var(--color-primary)',
