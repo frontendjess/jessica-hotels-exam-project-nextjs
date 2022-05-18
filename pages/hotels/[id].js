@@ -11,9 +11,70 @@ import {
 	SpecificHotelDatePickerCol,
 	SpecificHotelDataContainer,
 } from '../../components/specifichotel/SpecificHotelElements';
+import { useState } from 'react';
+import Select from 'react-select';
 
 export default function SpecificHotel({ hotelData }) {
 	console.log(hotelData);
+
+	const hotelRoomOptions = [
+		{ value: 'standard', label: 'Standard Room' },
+		{ value: 'deluxe', label: 'Deluxe Room' },
+		{ value: 'juniorsuite', label: 'Junior Suite' },
+		{ value: 'presidentialsuite', label: 'Presidential Suite' },
+	];
+
+	const guestsOptions = [
+		{ value: '1adult', label: '1 Adult' },
+		{ value: '1adult1child', label: '1 Adult + 1 Child' },
+		{ value: '1adult2child', label: '1 Adult + 2 Children' },
+		{ value: '2adults', label: '2 Adults' },
+		{ value: '2adults1child', label: '2 Adults + 1 Child' },
+		{ value: '2adults2child', label: '2 Adults + 2 Children' },
+		{
+			value: 'extraguests',
+			label: 'For more than 4 guests, make a new booking',
+		},
+	];
+
+	const [selectedOption, setSelectedOption] = useState('null');
+
+	const HotelRoomSelect = () => (
+		<Select
+			id='hotelroomselect'
+			defaultValue={selectedOption}
+			onChange={setSelectedOption}
+			options={hotelRoomOptions}
+			theme={(theme) => ({
+				...theme,
+				borderRadius: 0,
+				colors: {
+					...theme.colors,
+					primary25: 'var(--color-primary)',
+					primary: 'var(--color-black)',
+				},
+			})}
+		/>
+	);
+
+	const GuestSelect = () => (
+		<Select
+			id='guestselect'
+			defaultValue={selectedOption}
+			onChange={setSelectedOption}
+			options={guestsOptions}
+			theme={(theme) => ({
+				...theme,
+				borderRadius: 0,
+				colors: {
+					...theme.colors,
+					primary25: 'var(--color-primary)',
+					primary: 'var(--color-black)',
+				},
+			})}
+		/>
+	);
+
 	return (
 		<>
 			<Page title={hotelData.attributes.title}>
@@ -32,8 +93,14 @@ export default function SpecificHotel({ hotelData }) {
 							<label htmlFor='checkout'>Check Out:</label>
 							<input type='date' id='checkout' name='checkout' />
 						</SpecificHotelDatePickerCol>
-						<SpecificHotelDatePickerCol>1</SpecificHotelDatePickerCol>
-						<SpecificHotelDatePickerCol>1</SpecificHotelDatePickerCol>
+						<SpecificHotelDatePickerCol>
+							<label htmlFor='guestselect'>Guests:</label>
+							{GuestSelect()}
+						</SpecificHotelDatePickerCol>
+						<SpecificHotelDatePickerCol>
+							<label htmlFor='hotelroomselect'>Room:</label>
+							{HotelRoomSelect()}
+						</SpecificHotelDatePickerCol>
 						<SpecificHotelDatePickerCol>1</SpecificHotelDatePickerCol>
 					</SpecificHotelDatePickerContainer>
 				</SpecificHotelContainer>
