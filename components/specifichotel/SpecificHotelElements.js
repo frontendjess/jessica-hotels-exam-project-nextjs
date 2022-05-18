@@ -42,19 +42,28 @@ const SpecificHotelDatePickerContainer = styled.div`
 `;
 
 const SpecificHotelDatePickerCol = styled.div`
-	border: solid 1px hotpink;
 	flex: 1 0 200px;
 `;
 
 const DataPickerLabelCol = styled.div`
-	padding: 16px;
+	padding: 8px;
 	background-color: var(--color-black);
 	color: var(--color-white);
 	text-align: center;
 	text-transform: uppercase;
 `;
 
-const DataPickerLabel = styled.label``;
+const DataPickerLabel = styled.label`
+	width: 100%;
+`;
+
+const DataPickerInput = styled.input`
+	width: 100%;
+	padding: 8px;
+	font-size: var(--font-size);
+	text-align: center;
+	border: solid 1px hsl(0, 0%, 80%);
+`;
 
 const SpecificHotelDataContainer = styled.div``;
 
@@ -98,4 +107,5 @@ export {
 	DataPickerLabelCol,
 	DataPickerLabel,
 	DatePickerButton,
+	DataPickerInput,
 };

@@ -13,12 +13,15 @@ import {
 	DataPickerLabelCol,
 	DataPickerLabel,
 	DatePickerButton,
+	DataPickerInput,
 } from '../../components/specifichotel/SpecificHotelElements';
 import { useState } from 'react';
 import Select from 'react-select';
 
 export default function SpecificHotel({ hotelData }) {
 	console.log(hotelData);
+	const [selectedOption, setSelectedOption] = useState('null');
+	const [startDate, setStartDate] = useState(new Date());
 
 	const hotelRoomOptions = [
 		{ value: 'standard', label: 'Standard Room' },
@@ -39,8 +42,6 @@ export default function SpecificHotel({ hotelData }) {
 			label: 'For more than 4 guests, make a new booking',
 		},
 	];
-
-	const [selectedOption, setSelectedOption] = useState('null');
 
 	const HotelRoomSelect = () => (
 		<Select
@@ -69,6 +70,7 @@ export default function SpecificHotel({ hotelData }) {
 			theme={(theme) => ({
 				...theme,
 				borderRadius: 0,
+
 				colors: {
 					...theme.colors,
 					primary25: 'var(--color-primary)',
@@ -94,7 +96,7 @@ export default function SpecificHotel({ hotelData }) {
 									<DataPickerLabel htmlFor='checkin'>Check In</DataPickerLabel>
 								</DataPickerLabelCol>
 								<div>
-									<input type='date' id='checkin' name='checkin' />
+									<DataPickerInput type='date' id='checkin' name='checkin' />
 								</div>
 							</SpecificHotelDatePickerCol>
 							<SpecificHotelDatePickerCol>
@@ -104,7 +106,7 @@ export default function SpecificHotel({ hotelData }) {
 									</DataPickerLabel>
 								</DataPickerLabelCol>
 								<div>
-									<input type='date' id='checkout' name='checkout' />
+									<DataPickerInput type='date' id='checkout' name='checkout' />
 								</div>
 							</SpecificHotelDatePickerCol>
 							<SpecificHotelDatePickerCol>
