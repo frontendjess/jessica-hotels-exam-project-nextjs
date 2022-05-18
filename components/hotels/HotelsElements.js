@@ -30,7 +30,7 @@ const HotelsHeroTitle = styled.h1`
 `;
 
 const HotelsContainer = styled.div`
-	padding: 100px;
+	padding: 100px 100px 0 100px;
 `;
 
 const HotelsDataContainer = styled.div`

@@ -1,1 +1,1 @@
-export const BASE_URL = `https://hotels-api-holidaze-jessica.herokuapp.com`;
+export const BASE_URL = `http://localhost:1337`;

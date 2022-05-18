@@ -1,21 +1,42 @@
 import axios from 'axios';
 import Image from 'next/image';
+import styled from 'styled-components';
 import Page from '../../components/page/Page';
 import { BASE_URL } from '../../configs/configs';
-import { SpecificHotelContainer } from '../../components/specifichotel/SpecificHotelElements';
+import {
+	SpecificHotelHeroContainer,
+	SpecificHotelHeroTitle,
+	SpecificHotelContainer,
+	SpecificHotelDatePickerContainer,
+	SpecificHotelDatePickerCol,
+	SpecificHotelDataContainer,
+} from '../../components/specifichotel/SpecificHotelElements';
 
 export default function SpecificHotel({ hotelData }) {
 	console.log(hotelData);
 	return (
 		<>
 			<Page title={hotelData.attributes.title}>
-				<div className='specific-hotel-container'>
-					<Image
-						src={hotelData.attributes.image}
-						layout='fill'
-						alt={hotelData.attributes.title}
-					/>
-				</div>
+				<SpecificHotelHeroContainer>
+					<SpecificHotelHeroTitle>
+						{hotelData.attributes.title}_
+					</SpecificHotelHeroTitle>
+				</SpecificHotelHeroContainer>
+				<SpecificHotelContainer>
+					<SpecificHotelDatePickerContainer>
+						<SpecificHotelDatePickerCol>
+							<label htmlFor='checkin'>Check In:</label>
+							<input type='date' id='checkin' name='checkin' />
+						</SpecificHotelDatePickerCol>
+						<SpecificHotelDatePickerCol>
+							<label htmlFor='checkout'>Check Out:</label>
+							<input type='date' id='checkout' name='checkout' />
+						</SpecificHotelDatePickerCol>
+						<SpecificHotelDatePickerCol>1</SpecificHotelDatePickerCol>
+						<SpecificHotelDatePickerCol>1</SpecificHotelDatePickerCol>
+						<SpecificHotelDatePickerCol>1</SpecificHotelDatePickerCol>
+					</SpecificHotelDatePickerContainer>
+				</SpecificHotelContainer>
 			</Page>
 		</>
 	);
