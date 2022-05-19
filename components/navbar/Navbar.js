@@ -46,6 +46,13 @@ const Navbar = ({ toggle }) => {
 		setText(text);
 	};
 
+	const [user, setUser] = useState(null);
+
+	useEffect(() => {
+		// Perform localStorage action
+		setUser(localStorage.getItem('user'));
+	}, []);
+
 	return (
 		<>
 			<NavbarCol>
@@ -76,10 +83,17 @@ const Navbar = ({ toggle }) => {
 							<a>Contact</a>
 						</Link>
 					</Navlink>
+
 					<Navlink>
-						<Link href='/login'>
-							<a>Admin Login</a>
-						</Link>
+						{user ? (
+							<Link href='/logout'>
+								<a>Log Out</a>
+							</Link>
+						) : (
+							<Link href='/login'>
+								<a>Admin Login</a>
+							</Link>
+						)}
 					</Navlink>
 				</Navlinks>
 			</NavbarCol>

@@ -78,6 +78,8 @@ const DatePickerButton = styled.button`
 			: 'var(--color-button-secondary)'};
 
 	font-size: 1rem;
+	font-family: var(--font-body);
+	text-transform: uppercase;
 	padding: 1.15rem 1.75rem;
 	border: none;
 	border-radius: 0px;

@@ -129,7 +129,7 @@ export default function SpecificHotel({ hotelData }) {
 								<div>{HotelRoomSelect()}</div>
 							</SpecificHotelDatePickerCol>
 							<SpecificHotelDatePickerCol>
-								<DatePickerButton primary>Check Availability</DatePickerButton>
+								<DatePickerButton primary>Make a Booking</DatePickerButton>
 							</SpecificHotelDatePickerCol>
 						</SpecificHotelDatePickerContainer>{' '}
 					</form>{' '}

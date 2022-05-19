@@ -12,6 +12,6 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:1337/api/users/me
+GET https://hotels-api-holidaze-jessica.herokuapp.com/api/users/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNTEzMTQwLCJleHAiOjE2NTUxMDUxNDB9.OaAbKTBVpqV2vYTvX7C0-pd6_NQ2TlBdr0oJxzSoeC0
 
