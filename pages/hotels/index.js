@@ -14,7 +14,7 @@ import {
 import AlwaysAtHolidaze from '../../components/alwaysatholidaze/AlwaysAtHolidaze';
 import { BASE_URL } from '../../configs/configs';
 
-function index({ hotels }) {
+function Index({ hotels }) {
 	return (
 		<>
 			<Page title='Our Curated Hotels'>
@@ -71,4 +71,4 @@ export async function getServerSideProps() {
 	};
 }
 
-export default index;
+export default Index;

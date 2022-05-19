@@ -16,22 +16,27 @@ const Navbar = ({ toggle }) => {
 		const loadData = async () => {
 			const res = await axios.get(`${BASE_URL}/api/hotels`);
 			setHotels(res.data.data);
+
 			console.log('hotels', hotels);
 		};
 		loadData();
 	}, []);
 	const onChangeHandler = (text) => {
-		let matches = [];
+		let hotelMatches = [];
 		if (text.length > 0) {
-			matches = hotels.filter((hotel) => {
+			hotelMatches = hotels.filter((hotel) => {
 				const regex = new RegExp(`${text}`, 'gi');
-				return hotel.attributes.title.match(regex);
+				if (hotel.attributes.title.match(regex)) {
+					return hotel;
+				}
 			});
 		}
-		console.log('matches', matches);
-		setSuggestions(matches);
+		console.log('hotel matches', hotelMatches);
+
+		setSuggestions(hotelMatches);
 		setText(text);
 	};
+
 	return (
 		<>
 			<NavbarCol>
@@ -80,7 +85,11 @@ const Navbar = ({ toggle }) => {
 					/>
 					{suggestions &&
 						suggestions.map((suggestion, i) => (
-							<div key={i}>{suggestion.attributes.title}</div>
+							<div key={i}>
+								<Link href={`/hotels/${suggestion.id}`}>
+									<a>{suggestion.attributes.title}</a>
+								</Link>
+							</div>
 						))}
 				</div>
 				<MobileIcon onClick={toggle}>
