@@ -78,6 +78,10 @@ const Navbar = ({ toggle }) => {
 						value={text}
 						placeholder='Search for a hotel by name'
 					/>
+					{suggestions &&
+						suggestions.map((suggestion, i) => (
+							<div key={i}>{suggestion.attributes.title}</div>
+						))}
 				</div>
 				<MobileIcon onClick={toggle}>
 					<FaBarsIcon />
