@@ -159,8 +159,14 @@ const GlobalStyle = createGlobalStyle`
     .features-icon {
         width: 32px;
         height: 32px;
-
     }
+
+    .hamburger-menu {
+     padding-left: 50px;
+    
+    }
+
+    /* SPECIFIC HOTEL PAGE */
 
     .specific-hotel-container {
         width: 100%;

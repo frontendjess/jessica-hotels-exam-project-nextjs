@@ -3,8 +3,17 @@ import Image from 'next/image';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BASE_URL } from '../../configs/configs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-import { NavbarCol, Navlinks, Navlink, MobileIcon } from './NavbarElements';
+import {
+	NavbarCol,
+	Navlinks,
+	Navlink,
+	MobileIcon,
+	SearchBarInput,
+	SearchBarResultTitle,
+} from './NavbarElements';
 import FaBarsIcon from './FaBarsIcon';
 
 const Navbar = ({ toggle }) => {
@@ -77,19 +86,20 @@ const Navbar = ({ toggle }) => {
 
 			<NavbarCol>
 				<div>
-					<input
+					<SearchBarInput
 						type='text'
 						onChange={(event) => onChangeHandler(event.target.value)}
 						value={text}
 						placeholder='Search for a hotel by name'
-					/>
+					/>{' '}
+					<FontAwesomeIcon icon={faMagnifyingGlass} />
 					{suggestions &&
 						suggestions.map((suggestion, i) => (
-							<div key={i}>
+							<SearchBarResultTitle key={i}>
 								<Link href={`/hotels/${suggestion.id}`}>
 									<a>{suggestion.attributes.title}</a>
 								</Link>
-							</div>
+							</SearchBarResultTitle>
 						))}
 				</div>
 				<MobileIcon onClick={toggle}>

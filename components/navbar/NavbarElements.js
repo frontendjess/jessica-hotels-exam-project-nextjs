@@ -3,7 +3,6 @@ import media from 'styled-media-query';
 
 const NavbarCol = styled.div`
 	display: flex;
-	border: solid 1px red;
 `;
 
 const Navlinks = styled.ul`
@@ -32,4 +31,39 @@ const MobileIcon = styled.div`
     `}
 `;
 
-export { NavbarCol, Navlinks, Navlink, MobileIcon };
+const SearchBarInput = styled.input`
+	padding: 8px;
+	width: 250px;
+	font-family: var(--font-body);
+	background-color: transparent;
+	border: none;
+	a {
+		padding: 4px;
+	}
+
+	${media.lessThan('small')`
+		width: 120px;
+	`}
+`;
+
+const SearchBarResultTitle = styled.div`
+	padding: 4px;
+
+	a {
+		color: var(--color-black);
+	}
+
+	a:hover {
+		background-color: var(--color-primary);
+		cursor: pointer;
+	}
+`;
+
+export {
+	NavbarCol,
+	Navlinks,
+	Navlink,
+	MobileIcon,
+	SearchBarInput,
+	SearchBarResultTitle,
+};
