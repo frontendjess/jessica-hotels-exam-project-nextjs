@@ -48,9 +48,11 @@ const Navbar = ({ toggle }) => {
 
 	const [user, setUser] = useState(null);
 
+	const [eraseUser, setEraseUser] = useState(null);
+
 	useEffect(() => {
-		// Perform localStorage action
 		setUser(localStorage.getItem('user'));
+		setEraseUser(JSON.parse(localStorage.getItem('user')));
 	}, []);
 
 	return (
