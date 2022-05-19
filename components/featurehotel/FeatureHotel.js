@@ -22,7 +22,7 @@ function FeatureHotel() {
 								{' '}
 								<Button primary>
 									{' '}
-									<Link href='/hotelfrantz'>
+									<Link href='/hotels/1'>
 										<a>View This Location</a>
 									</Link>
 								</Button>
