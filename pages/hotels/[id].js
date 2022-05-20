@@ -22,7 +22,7 @@ import {
 import { useState } from 'react';
 import Select from 'react-select';
 import AlwaysAtHolidaze from '../../components/alwaysatholidaze/AlwaysAtHolidaze';
-import { AlwaysAtHolidazeSection } from '../../components/alwaysatholidaze/AlwaysAtHolidazeElements';
+import { useRouter } from 'next/router';
 
 export default function SpecificHotel({ hotelData }) {
 	console.log(hotelData);
@@ -85,6 +85,14 @@ export default function SpecificHotel({ hotelData }) {
 		/>
 	);
 
+	const Router = useRouter();
+
+	function handleSubmit(e) {
+		e.preventDefault();
+		console.log('form sent');
+		Router.push('/bookyourstay');
+	}
+
 	return (
 		<>
 			<Page title={hotelData.attributes.title}>
@@ -131,7 +139,9 @@ export default function SpecificHotel({ hotelData }) {
 								<div>{HotelRoomSelect()}</div>
 							</SpecificHotelDatePickerCol>
 							<SpecificHotelDatePickerCol>
-								<DatePickerButton primary>Make a Booking</DatePickerButton>
+								<DatePickerButton onClick={handleSubmit} primary>
+									Make a Booking
+								</DatePickerButton>
 							</SpecificHotelDatePickerCol>
 						</SpecificHotelDatePickerContainer>{' '}
 					</form>{' '}

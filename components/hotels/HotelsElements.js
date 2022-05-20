@@ -31,6 +31,10 @@ const HotelsHeroTitle = styled.h1`
 
 const HotelsContainer = styled.div`
 	padding: 100px 100px 0 100px;
+
+	${media.lessThan('medium')`
+		padding: 100px 25px 0 25px;
+	`}
 `;
 
 const HotelsDataContainer = styled.div`
