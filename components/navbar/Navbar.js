@@ -48,12 +48,14 @@ const Navbar = ({ toggle }) => {
 
 	const [user, setUser] = useState(null);
 
-	const [eraseUser, setEraseUser] = useState(null);
-
 	useEffect(() => {
 		setUser(localStorage.getItem('user'));
-		setEraseUser(JSON.parse(localStorage.getItem('user')));
 	}, []);
+	function handleSubmit(e) {
+		console.log('You clicked on this shiet right here lol');
+		window.localStorage.removeItem('user');
+		window.localStorage.removeItem('jwt');
+	}
 
 	return (
 		<>
@@ -89,7 +91,7 @@ const Navbar = ({ toggle }) => {
 					<Navlink>
 						{user ? (
 							<Link href='/logout'>
-								<a>Log Out</a>
+								<a onClick={handleSubmit}>Log Out</a>
 							</Link>
 						) : (
 							<Link href='/login'>
