@@ -7,8 +7,20 @@ import {
 	SidebarMenu,
 	SidebarLink,
 } from './SidebarElements';
+import { useState, useEffect } from 'react';
 
 const Sidebar = ({ isOpen, toggle }) => {
+	const [user, setUser] = useState(null);
+
+	useEffect(() => {
+		setUser(localStorage.getItem('user'));
+	}, []);
+
+	function handleOnClick(e) {
+		console.log('user cleared');
+		window.localStorage.removeItem('user');
+		window.localStorage.removeItem('jwt');
+	}
 	return (
 		<SidebarContainer isOpen={isOpen} onClick={toggle}>
 			{' '}
@@ -33,9 +45,15 @@ const Sidebar = ({ isOpen, toggle }) => {
 						</Link>
 					</SidebarLink>
 					<SidebarLink>
-						<Link className='nav-link' href='/login' isOpen={isOpen}>
-							<a>Admin Login</a>
-						</Link>
+						{user ? (
+							<Link className='nav-link' href='/logout' isOpen={isOpen}>
+								<a onClick={handleOnClick}>Logout</a>
+							</Link>
+						) : (
+							<Link className='nav-link' href='/login' isOpen={isOpen}>
+								<a>Login</a>
+							</Link>
+						)}
 					</SidebarLink>
 				</SidebarMenu>
 			</SidebarWrapper>

@@ -21,6 +21,8 @@ import {
 } from '../../components/specifichotel/SpecificHotelElements';
 import { useState } from 'react';
 import Select from 'react-select';
+import AlwaysAtHolidaze from '../../components/alwaysatholidaze/AlwaysAtHolidaze';
+import { AlwaysAtHolidazeSection } from '../../components/alwaysatholidaze/AlwaysAtHolidazeElements';
 
 export default function SpecificHotel({ hotelData }) {
 	console.log(hotelData);
@@ -158,6 +160,7 @@ export default function SpecificHotel({ hotelData }) {
 						</SpecificHotelDataRightCol>
 					</SpecificHotelDataContainer>
 				</SpecificHotelContainer>
+				<AlwaysAtHolidaze />
 			</Page>
 		</>
 	);

@@ -55,8 +55,13 @@ const SidebarLink = styled.li`
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	font-size: 1.5rem;
+	font-size: var(--h5-size);
 	padding: 2rem;
+
+	${media.lessThan('small')`
+		font-size: var(--h5-mobile-size);
+	`}
+
 	a {
 		font-family: var(--font-body);
 		font-size: var(--font-size-lg);
@@ -74,7 +79,7 @@ const SidebarLink = styled.li`
 			content: '';
 			display: inline-block;
 			vertical-align: middle;
-			width: 150px;
+			width: 50px;
 			height: 5px;
 			background-color: var(--color-primary);
 			margin-right: 15px;
