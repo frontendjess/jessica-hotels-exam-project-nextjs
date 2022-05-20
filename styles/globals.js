@@ -124,7 +124,7 @@ const GlobalStyle = createGlobalStyle`
     input {
         -webkit-appearance: none;
         -moz-appearance: none;
-        apperance: none;
+ 
     }
 
     /* MARGINS AND PADDINGS */
