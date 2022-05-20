@@ -4,6 +4,10 @@ import Page from '../components/page/Page';
 import {
 	LoginContainer,
 	LoginAlertContainer,
+	LoginForm,
+	LoginFormRow,
+	LoginFormInput,
+	LoginFormButton,
 } from '../components/login/LoginElements';
 import { BASE_URL } from '../configs/configs';
 
@@ -40,32 +44,40 @@ export default function AdminLogin() {
 			<Page title='Admin login'>
 				<LoginContainer>
 					<h1>Admin Login</h1>
-					<form onSubmit={handleSubmit}>
-						<label htmlFor='email' label='Email'>
-							Email
-							<input
-								type='email'
-								name='email'
-								id='email'
-								required
-								value={email}
-								onChange={(event) => setEmail(event.target.value)}
-							/>
-						</label>
-						<label htmlFor='password' label='Password'>
-							Password
-							<input
-								type='password'
-								name='password'
-								id='password'
-								required
-								value={password}
-								onChange={(event) => setPassword(event.target.value)}
-							/>
-						</label>
-						<button type='submit'>Sign In</button>
-						<LoginAlertContainer></LoginAlertContainer>
-					</form>
+					<LoginForm>
+						<form onSubmit={handleSubmit}>
+							<LoginFormRow>
+								<LoginFormInput
+									type='email'
+									name='email'
+									id='email'
+									placeholder='Email'
+									required
+									value={email}
+									onChange={(event) => setEmail(event.target.value)}
+								/>
+							</LoginFormRow>
+							<LoginFormRow>
+								<LoginFormInput
+									type='password'
+									name='password'
+									id='password'
+									placeholder='Password'
+									required
+									value={password}
+									onChange={(event) => setPassword(event.target.value)}
+								/>
+							</LoginFormRow>
+							<LoginFormRow>
+								<LoginFormButton primary type='submit'>
+									Sign In
+								</LoginFormButton>
+							</LoginFormRow>
+							<LoginAlertContainer>
+								<p>Forgot your password?</p>
+							</LoginAlertContainer>
+						</form>
+					</LoginForm>
 				</LoginContainer>
 			</Page>
 		</>

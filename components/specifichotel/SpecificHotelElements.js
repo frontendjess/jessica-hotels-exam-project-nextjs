@@ -114,6 +114,16 @@ const SpecificHotelDataContainer = styled.div`
 		text-transform: uppercase;
 		letter-spacing: var(--letter-spacing-xxl);
 		line-height: var(--line-height-xxl);
+
+		${media.lessThan('medium')`
+			font-size: var(--h2-mobile-size);
+			line-height: var(--line-height-xl);
+		`}
+
+		${media.lessThan('small')`
+			font-size: var(--h3-mobile-size);
+			line-height: var(--line-height-lg);
+		`}
 	}
 
 	h5 {

@@ -51,8 +51,9 @@ const Navbar = ({ toggle }) => {
 	useEffect(() => {
 		setUser(localStorage.getItem('user'));
 	}, []);
-	function handleSubmit(e) {
-		console.log('You clicked on this shiet right here lol');
+
+	function handleOnClick(e) {
+		console.log('user cleared');
 		window.localStorage.removeItem('user');
 		window.localStorage.removeItem('jwt');
 	}
@@ -91,7 +92,7 @@ const Navbar = ({ toggle }) => {
 					<Navlink>
 						{user ? (
 							<Link href='/logout'>
-								<a onClick={handleSubmit}>Log Out</a>
+								<a onClick={handleOnClick}>Log Out</a>
 							</Link>
 						) : (
 							<Link href='/login'>
