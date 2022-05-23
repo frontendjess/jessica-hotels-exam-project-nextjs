@@ -88,6 +88,7 @@ const GlobalStyle = createGlobalStyle`
         --color-secondary: #376C59;
         --color-tertiary: #DB4941;
         --color-button-primary: rgba(116, 183, 160, 0.4);
+        --color-button-primary-rgb: rgb(116, 183, 160);
         --color-button-secondary: #ffffff;
         --color-white-bg: rgba(255, 255, 255, 0.4);
     }

@@ -54,6 +54,7 @@ const HeroTitleContainer = styled.div`
 const HeroSearchFormContainer = styled.div`
 	flex: 1 1 auto;
 	width: 35%;
+	position: relative;
 
 	${media.lessThan('large')`
         width: 100%;
@@ -158,17 +159,16 @@ const HeroDataPickerContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	gap: 50px;
-	z-index: 9999;
+	z-index: 10;
+	position: absolute;
 `;
 
 const HeroDataPickerRow = styled.div`
 	flex: 1 1 100%;
-	border: solid 1px hotpink;
 `;
 
 const HeroDataPickerCol = styled.div`
 	flex: 1 0 150px;
-	border: solid 1px green;
 `;
 
 const HeroDataPickerInput = styled.input`
@@ -195,6 +195,38 @@ const HeroDataPickerInput = styled.input`
 	}
 `;
 
+const HeroDatePickerButton = styled.button`
+	width: 100%;
+	background: ${(props) =>
+		props.primary
+			? 'var(--color-button-primary-rgb)'
+			: 'var(--color-button-secondary)'};
+
+	font-size: 1rem;
+	font-family: var(--font-body);
+	text-transform: uppercase;
+	padding: 1.15rem 1.75rem;
+	border: none;
+	border-radius: 0px;
+	transition: all 0.11s ease-out;
+
+	:hover {
+		border: 1px solid var(--color-black);
+		transform: translate(-0.25rem, -0.25rem);
+		box-shadow: 0.25rem 0.25rem #000;
+		cursor: pointer;
+	}
+
+	a {
+		color: var(--color-black);
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: var(--font-body);
+		font-size: var(--font-size);
+		letter-spacing: var(--letter-spacing-size);
+	}
+`;
+
 export {
 	HeroContainer,
 	HeroTitleContainer,
@@ -203,6 +235,7 @@ export {
 	HeroDataPickerRow,
 	HeroDataPickerCol,
 	HeroDataPickerInput,
+	HeroDatePickerButton,
 	HeroBlackBg,
 	HeroCities,
 	HeroCityOslo,

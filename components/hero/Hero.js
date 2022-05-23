@@ -9,6 +9,7 @@ import {
 	HeroDataPickerRow,
 	HeroDataPickerCol,
 	HeroDataPickerInput,
+	HeroDatePickerButton,
 	HeroBlackBg,
 	HeroCities,
 	HeroCityOslo,
@@ -23,12 +24,81 @@ import {
 	DataPickerInput,
 	DataPickerLabel,
 	DataPickerLabelCol,
+	DatePickerButton,
 } from '../specifichotel/SpecificHotelElements';
+import Select from 'react-select';
+import { useRouter } from 'next/router';
 
 function Hero() {
 	const [isOsloShowing, setIsOsloShowing] = useState(false);
 	const [isGoteborgShowing, setIsGoteborgShowing] = useState(false);
 	const [isMiamiShowing, setIsMiamiShowing] = useState(false);
+	const [selectedOption, setSelectedOption] = useState('null');
+
+	const cityOptions = [
+		{ value: 'oslo', label: 'Oslo, Norway' },
+		{ value: 'morecomingsoon', label: 'More Locations Coming Soon' },
+	];
+
+	const guestsOptions = [
+		{ value: '1adult', label: '1 Adult / 1 Room' },
+		{ value: '1adult1child', label: '1 Adult + 1 Child / 1 Room' },
+		{ value: '1adult2child', label: '1 Adult + 2 Children  / 1 Room' },
+		{ value: '2adults', label: '2 Adults / 1 Room' },
+		{ value: '2adults1child', label: '2 Adults + 1 Child / 1 Room' },
+		{ value: '2adults2child', label: '2 Adults + 2 Children / 1 Room' },
+		{
+			value: 'extraguests',
+			label: 'For more than 4 guests, make a new booking',
+		},
+	];
+
+	const CitySelect = () => (
+		<Select
+			placeholder='Oslo, Norway'
+			id='cityselect'
+			defaultValue={selectedOption}
+			onChange={setSelectedOption}
+			options={cityOptions}
+			theme={(theme) => ({
+				...theme,
+				borderRadius: 0,
+				colors: {
+					...theme.colors,
+					primary25: 'var(--color-primary)',
+					primary: 'var(--color-black)',
+				},
+			})}
+		/>
+	);
+
+	const GuestSelect = () => (
+		<Select
+			placeholder='Guest / Room'
+			id='guestselect'
+			defaultValue={selectedOption}
+			onChange={setSelectedOption}
+			options={guestsOptions}
+			theme={(theme) => ({
+				...theme,
+				borderRadius: 0,
+				colors: {
+					...theme.colors,
+					primary25: 'var(--color-primary)',
+					primary: 'var(--color-black)',
+				},
+			})}
+		/>
+	);
+
+	const Router = useRouter();
+
+	function handleSubmit(e) {
+		e.preventDefault();
+		console.log('search form clicked');
+		Router.push('/hotels');
+	}
+
 	return (
 		<>
 			<HeroContainer id='Header'>
@@ -36,7 +106,6 @@ function Hero() {
 					<h1>Book your Holidaze stay_</h1>
 				</HeroTitleContainer>
 				<HeroSearchFormContainer>
-					<h2>Search form goes here</h2>
 					<HeroDataPickerContainer>
 						<HeroDataPickerCol>
 							<DataPickerLabelCol>
@@ -62,9 +131,17 @@ function Hero() {
 								/>
 							</div>
 						</HeroDataPickerCol>
-						<HeroDataPickerRow>3</HeroDataPickerRow>
-						<HeroDataPickerRow>4</HeroDataPickerRow>
-						<HeroDataPickerRow>5</HeroDataPickerRow>
+						<HeroDataPickerRow>
+							<div>{GuestSelect()}</div>
+						</HeroDataPickerRow>
+						<HeroDataPickerRow>
+							<div>{CitySelect()}</div>
+						</HeroDataPickerRow>
+						<HeroDataPickerRow>
+							<HeroDatePickerButton primary onClick={handleSubmit}>
+								View Hotels & Rates
+							</HeroDatePickerButton>
+						</HeroDataPickerRow>
 					</HeroDataPickerContainer>
 				</HeroSearchFormContainer>
 				<HeroCities>
