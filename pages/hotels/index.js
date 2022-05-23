@@ -8,6 +8,7 @@ import {
 	HotelsDataCol,
 	HotelsDataTitle,
 	HotelsDataLocation,
+	HotelsDataPrice,
 	HotelsButtons,
 	HotelsSpecificButton,
 } from '../../components/hotels/HotelsElements';
@@ -37,6 +38,12 @@ function Index({ hotels }) {
 								<div>
 									<p>{hotel.attributes.description}</p>
 								</div>
+								<HotelsDataPrice>
+									<h6>
+										Rooms starting at{' '}
+										<span className='price'>{hotel.attributes.price}</span> nok
+									</h6>
+								</HotelsDataPrice>
 								<HotelsButtons>
 									<HotelsSpecificButton primary>
 										{' '}

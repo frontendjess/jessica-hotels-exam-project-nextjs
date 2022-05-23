@@ -127,6 +127,10 @@ const GlobalStyle = createGlobalStyle`
  
     }
 
+    .price {
+        color: var(--color-secondary);
+    }
+
     /* MARGINS AND PADDINGS */
     .section {
         padding: 150px 0;
@@ -178,6 +182,8 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         height: 70vh;
     }
+
+
 
 
 `;

@@ -5,6 +5,10 @@ import {
 	HeroContainer,
 	HeroTitleContainer,
 	HeroSearchFormContainer,
+	HeroDataPickerContainer,
+	HeroDataPickerRow,
+	HeroDataPickerCol,
+	HeroDataPickerInput,
 	HeroBlackBg,
 	HeroCities,
 	HeroCityOslo,
@@ -15,6 +19,11 @@ import {
 	HeroCityInactiveLinksGray,
 	HeroCityComingSoonSpan,
 } from './HeroElements';
+import {
+	DataPickerInput,
+	DataPickerLabel,
+	DataPickerLabelCol,
+} from '../specifichotel/SpecificHotelElements';
 
 function Hero() {
 	const [isOsloShowing, setIsOsloShowing] = useState(false);
@@ -28,6 +37,35 @@ function Hero() {
 				</HeroTitleContainer>
 				<HeroSearchFormContainer>
 					<h2>Search form goes here</h2>
+					<HeroDataPickerContainer>
+						<HeroDataPickerCol>
+							<DataPickerLabelCol>
+								<DataPickerLabel>Check In</DataPickerLabel>
+							</DataPickerLabelCol>
+							<div>
+								<HeroDataPickerInput
+									type='date'
+									id='checkout'
+									name='checkout'
+								/>
+							</div>
+						</HeroDataPickerCol>
+						<HeroDataPickerCol>
+							<DataPickerLabelCol>
+								<DataPickerLabel>Check Out</DataPickerLabel>
+							</DataPickerLabelCol>
+							<div>
+								<HeroDataPickerInput
+									type='date'
+									id='checkout'
+									name='checkout'
+								/>
+							</div>
+						</HeroDataPickerCol>
+						<HeroDataPickerRow>3</HeroDataPickerRow>
+						<HeroDataPickerRow>4</HeroDataPickerRow>
+						<HeroDataPickerRow>5</HeroDataPickerRow>
+					</HeroDataPickerContainer>
 				</HeroSearchFormContainer>
 				<HeroCities>
 					{' '}

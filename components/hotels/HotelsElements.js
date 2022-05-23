@@ -55,12 +55,20 @@ const HotelsDataCol = styled.div`
 
 const HotelsDataTitle = styled.h6`
 	padding-top: 50px;
-	font-size: var(--h6-size);
+	font-size: var(--h5-size);
 `;
 
 const HotelsDataLocation = styled.div`
 	padding-top: 25px;
 	padding-bottom: 25px;
+`;
+
+const HotelsDataPrice = styled.div`
+	padding-top: 25px;
+
+	h6 {
+		font-size: var(--h6-mobile-size);
+	}
 `;
 
 const HotelsButtons = styled.div`
@@ -106,6 +114,7 @@ export {
 	HotelsDataCol,
 	HotelsDataTitle,
 	HotelsDataLocation,
+	HotelsDataPrice,
 	HotelsButtons,
 	HotelsSpecificButton,
 };

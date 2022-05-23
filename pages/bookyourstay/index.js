@@ -1,4 +1,4 @@
-import Page from '../components/page/Page';
+import Page from '../../components/page/Page';
 
 function Bookyourstay() {
 	return (

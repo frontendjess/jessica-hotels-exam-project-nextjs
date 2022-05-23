@@ -154,10 +154,55 @@ const HeroCityComingSoonSpan = styled.span`
 	font-style: italic;
 `;
 
+const HeroDataPickerContainer = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+	z-index: 9999;
+`;
+
+const HeroDataPickerRow = styled.div`
+	flex: 1 1 100%;
+	border: solid 1px hotpink;
+`;
+
+const HeroDataPickerCol = styled.div`
+	flex: 1 0 150px;
+	border: solid 1px green;
+`;
+
+const HeroDataPickerInput = styled.input`
+	width: 100%;
+	padding: 16px 8px;
+	font-size: var(--font-size);
+	text-align: center;
+	border: solid 1px hsl(0, 0%, 80%);
+
+	::-webkit-datetime-edit-day-field {
+		display: block;
+	}
+
+	::-webkit-datetime-edit-month-field {
+		display: block;
+	}
+
+	::-webkit-datetime-edit-year-field {
+		display: block;
+	}
+
+	::-webkit-datetime-edit-text {
+		color: transparent;
+	}
+`;
+
 export {
 	HeroContainer,
 	HeroTitleContainer,
 	HeroSearchFormContainer,
+	HeroDataPickerContainer,
+	HeroDataPickerRow,
+	HeroDataPickerCol,
+	HeroDataPickerInput,
 	HeroBlackBg,
 	HeroCities,
 	HeroCityOslo,
