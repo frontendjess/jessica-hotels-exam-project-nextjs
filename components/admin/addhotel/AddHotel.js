@@ -7,10 +7,13 @@ import {
 	FormInputWrapper,
 	FormInputBorder,
 	FormControl,
+} from './AddHotelElements';
+import {
 	AdminButton,
 	AdminReturnButton,
 	AdminReturnButtonWrapper,
-} from './AddHotelElements';
+	AdminTitle,
+} from '../global/GlobalElements';
 import axios from 'axios';
 import { BASE_URL } from '../../../configs/configs';
 import { useState } from 'react';
@@ -66,7 +69,7 @@ function AddHotelPage() {
 	return (
 		<>
 			<AddHotelContainer>
-				<AddHotelTitle>Add a New Hotel Location</AddHotelTitle>
+				<AdminTitle>Add a New Hotel Location</AdminTitle>
 
 				<form onSubmit={(event) => handleSubmit(event)}>
 					<AddHotelFormContainer>

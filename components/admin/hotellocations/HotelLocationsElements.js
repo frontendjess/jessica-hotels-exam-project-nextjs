@@ -9,4 +9,27 @@ const AdminHotelLocationsContainer = styled.div`
     `}
 `;
 
-export { AdminHotelLocationsContainer };
+const AdminAddNewLocationLink = styled.a`
+	padding-left: 1rem;
+	font-family: var(--font-body);
+	font-size: var(--h4-size);
+	text-transform: uppercase;
+	cursor: pointer;
+	color: var(--color-secondary);
+	transition: all 0.11s ease-out;
+
+	:hover {
+		color: var(--color-black);
+	}
+`;
+
+const AdminHotelsTableContainer = styled.div`
+	backgound-color: var(--color-white);
+	padding: 50px;
+`;
+
+export {
+	AdminHotelLocationsContainer,
+	AdminAddNewLocationLink,
+	AdminHotelsTableContainer,
+};

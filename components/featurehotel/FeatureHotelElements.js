@@ -84,7 +84,6 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-	/* Adapt the colors based on primary prop */
 	background: ${(props) =>
 		props.primary ? 'var(--color-button-primary)' : 'white'};
 
