@@ -28,10 +28,6 @@ const AddHotelTitle = styled.h1`
     `}
 `;
 
-const AddHotelForm = styled.div`
-	width: 100%;
-`;
-
 const AddHotelFormContainer = styled.div`
 	padding: 50px;
 	background-color: var(--color-white);
@@ -78,13 +74,53 @@ const FormControl = styled.input`
 
 const AdminButton = styled.button`
 	background: ${(props) =>
-		props.primary ? 'var(--color-button-primary-rgb)' : 'white'};
+		props.primary ? 'var(--color-button-admin)' : 'var(--color-primary-rgb)'};
 
 	font-size: 1rem;
 	padding: 1.15rem 1.75rem;
 	border: none;
 	border-radius: 0px;
 	transition: all 0.11s ease-out;
+	color: var(--color-white);
+	font-family: var(--font-body);
+	text-transform: uppercase;
+
+	:hover {
+		border: 1px solid var(--color-gray);
+		transform: translate(-0.25rem, -0.25rem);
+		box-shadow: 0.25rem 0.25rem #000;
+		cursor: pointer;
+	}
+
+	a {
+		color: var(--color-white);
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: var(--font-body);
+		font-size: var(--font-size);
+		letter-spacing: var(--letter-spacing-size);
+	}
+`;
+
+const AdminReturnButtonWrapper = styled.div`
+	padding-top: 100px;
+`;
+
+const AdminReturnButton = styled.button`
+	background: ${(props) =>
+		props.primary
+			? 'var(--color-button-primary)'
+			: 'var(--color-primary-secondary)'};
+
+	font-size: 1rem;
+	padding: 1.15rem 1.75rem;
+	border: none;
+	border-radius: 0px;
+	transition: all 0.11s ease-out;
+	color: var(--color-black);
+	font-family: var(--font-body);
+	text-transform: uppercase;
+	border: solid 1px var(--color-black);
 
 	:hover {
 		border: 1px solid var(--color-black);
@@ -94,7 +130,7 @@ const AdminButton = styled.button`
 	}
 
 	a {
-		color: var(--color-black);
+		color: var(--color-white);
 		text-transform: uppercase;
 		text-decoration: none;
 		font-family: var(--font-body);
@@ -106,7 +142,6 @@ const AdminButton = styled.button`
 export {
 	AddHotelContainer,
 	AddHotelTitle,
-	AddHotelForm,
 	AddHotelFormContainer,
 	AddHotelFormColLeft,
 	AddHotelFormColRight,
@@ -114,4 +149,6 @@ export {
 	FormInputBorder,
 	FormControl,
 	AdminButton,
+	AdminReturnButton,
+	AdminReturnButtonWrapper,
 };

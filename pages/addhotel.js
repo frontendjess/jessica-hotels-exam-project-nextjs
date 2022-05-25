@@ -1,10 +1,10 @@
 import Page from '../components/page/Page';
-import AddHotelPage from '../components/addhotel/AddHotel';
+import AddHotelPage from '../components/admin/addhotel/AddHotel';
 
 function Addhotel() {
 	return (
 		<>
-			<Page title='Add a New Hotel Location'>
+			<Page title='Admin - Add a New Hotel Location'>
 				<AddHotelPage />
 			</Page>
 		</>

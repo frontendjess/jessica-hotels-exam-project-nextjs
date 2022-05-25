@@ -1,7 +1,6 @@
 import {
 	AddHotelContainer,
 	AddHotelTitle,
-	AddHotelForm,
 	AddHotelFormContainer,
 	AddHotelFormColLeft,
 	AddHotelFormColRight,
@@ -9,9 +8,11 @@ import {
 	FormInputBorder,
 	FormControl,
 	AdminButton,
+	AdminReturnButton,
+	AdminReturnButtonWrapper,
 } from './AddHotelElements';
 import axios from 'axios';
-import { BASE_URL } from '../../configs/configs';
+import { BASE_URL } from '../../../configs/configs';
 import { useState } from 'react';
 
 function AddHotelPage() {
@@ -149,6 +150,10 @@ function AddHotelPage() {
 						</AddHotelFormColRight>
 					</AddHotelFormContainer>{' '}
 				</form>
+
+				<AdminReturnButtonWrapper>
+					<AdminReturnButton primary>Go Back To Dashboard</AdminReturnButton>
+				</AdminReturnButtonWrapper>
 			</AddHotelContainer>
 		</>
 	);

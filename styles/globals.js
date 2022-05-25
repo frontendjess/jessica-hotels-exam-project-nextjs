@@ -90,6 +90,7 @@ const GlobalStyle = createGlobalStyle`
         --color-button-primary: rgba(116, 183, 160, 0.4);
         --color-button-primary-rgb: rgb(116, 183, 160);
         --color-button-secondary: #ffffff;
+        --color-button-admin: #292929;
         --color-white-bg: rgba(255, 255, 255, 0.4);
     }
 
