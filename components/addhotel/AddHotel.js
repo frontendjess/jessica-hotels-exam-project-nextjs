@@ -8,6 +8,7 @@ import {
 	FormInputWrapper,
 	FormInputBorder,
 	FormControl,
+	AdminButton,
 } from './AddHotelElements';
 import axios from 'axios';
 import { BASE_URL } from '../../configs/configs';
@@ -35,26 +36,18 @@ function AddHotelPage() {
 			rooms: rooms,
 		};
 
-		axios(
-			// .post(`${BASE_URL}/api/hotels`, {
-			// 	headers: {
-			// 		Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-			// 	},
-			// 	data: newHotel,
-			// })
-			{
-				method: 'post',
-				url: `${BASE_URL}/api/hotels`,
-				headers: {
-					Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-				},
+		axios({
+			method: 'post',
+			url: `${BASE_URL}/api/hotels`,
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+			},
+			data: {
 				data: {
-					data: {
-						...newHotel,
-					},
+					...newHotel,
 				},
-			}
-		)
+			},
+		})
 			.then((response) => {
 				if (response.status === 200) {
 					console.log('response', response);
@@ -68,16 +61,6 @@ function AddHotelPage() {
 				console.log('catch error', err);
 			});
 	};
-
-	// 	try {
-	// 		const response = await axios.post(`${BASE_URL}/api/hotels`, {
-	// 			data: newHotel,
-	// 		});
-	// 		console.log(response);
-	// 	} catch (err) {
-	// 		console.log('catch error', err.response.data.error);
-	// 	}
-	// };
 
 	return (
 		<>
@@ -160,7 +143,9 @@ function AddHotelPage() {
 							</FormInputWrapper>
 						</AddHotelFormColLeft>
 						<AddHotelFormColRight>
-							<button type='submit'>Add New Location</button>
+							<AdminButton primary type='submit'>
+								Add New Location
+							</AdminButton>
 						</AddHotelFormColRight>
 					</AddHotelFormContainer>{' '}
 				</form>

@@ -41,14 +41,23 @@ const AddHotelFormContainer = styled.div`
 `;
 
 const AddHotelFormColLeft = styled.div`
-	flex: 1 0 450px;
+	flex: 1 0 55%;
+
+	${media.lessThan('medium')`
+		flex: 1 0 100%;
+	`}
 `;
 
 const AddHotelFormColRight = styled.div`
-	flex: 1 0 450px;
+	flex: 1 0 30%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
+
+	${media.lessThan('medium')`
+		flex: 1 0 100%;
+		padding-top: 25px;
+	`}
 `;
 
 const FormInputWrapper = styled.div`
@@ -67,6 +76,33 @@ const FormControl = styled.input`
 	border: none;
 `;
 
+const AdminButton = styled.button`
+	background: ${(props) =>
+		props.primary ? 'var(--color-button-primary-rgb)' : 'white'};
+
+	font-size: 1rem;
+	padding: 1.15rem 1.75rem;
+	border: none;
+	border-radius: 0px;
+	transition: all 0.11s ease-out;
+
+	:hover {
+		border: 1px solid var(--color-black);
+		transform: translate(-0.25rem, -0.25rem);
+		box-shadow: 0.25rem 0.25rem #000;
+		cursor: pointer;
+	}
+
+	a {
+		color: var(--color-black);
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: var(--font-body);
+		font-size: var(--font-size);
+		letter-spacing: var(--letter-spacing-size);
+	}
+`;
+
 export {
 	AddHotelContainer,
 	AddHotelTitle,
@@ -77,4 +113,5 @@ export {
 	FormInputWrapper,
 	FormInputBorder,
 	FormControl,
+	AdminButton,
 };
