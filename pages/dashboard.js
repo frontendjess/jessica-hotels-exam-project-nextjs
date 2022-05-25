@@ -1,6 +1,6 @@
 import Page from '../components/page/Page';
 
-function dashboard() {
+function Dashboard() {
 	return (
 		<>
 			<Page title='Admin Dashboard'>
@@ -10,4 +10,4 @@ function dashboard() {
 	);
 }
 
-export default dashboard;
+export default Dashboard;

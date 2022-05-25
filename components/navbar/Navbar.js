@@ -78,28 +78,44 @@ const Navbar = ({ toggle }) => {
 							<a>Home</a>
 						</Link>
 					</Navlink>
-					<Navlink>
-						<Link href='/hotels'>
-							<a>Hotels</a>
-						</Link>
-					</Navlink>
-					<Navlink>
-						<Link href='/contact'>
-							<a>Contact</a>
-						</Link>
-					</Navlink>
 
-					<Navlink>
-						{user ? (
-							<Link href='/logout'>
-								<a onClick={handleOnClick}>Log Out</a>
-							</Link>
-						) : (
-							<Link href='/login'>
-								<a>Admin Login</a>
-							</Link>
-						)}
-					</Navlink>
+					{user ? (
+						<>
+							<Navlink>
+								<Link href='/dashboard'>
+									<a>Admin Dashboard</a>
+								</Link>
+							</Navlink>
+							<Navlink>
+								<Link href='/addhotel'>
+									<a>Add a Hotel</a>
+								</Link>
+							</Navlink>
+							<Navlink>
+								<Link href='/logout'>
+									<a onClick={handleOnClick}>Log Out</a>
+								</Link>
+							</Navlink>
+						</>
+					) : (
+						<>
+							<Navlink>
+								<Link href='/hotels'>
+									<a>Hotels</a>
+								</Link>
+							</Navlink>
+							<Navlink>
+								<Link href='/contact'>
+									<a>Contact</a>
+								</Link>
+							</Navlink>
+							<Navlink>
+								<Link href='/login'>
+									<a>Admin Login</a>
+								</Link>
+							</Navlink>
+						</>
+					)}
 				</Navlinks>
 			</NavbarCol>
 

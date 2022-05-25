@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 const Header = styled.div`
 	width: 100%;
-	padding: 0 100px;
+	padding: 25px 100px;
 	display: flex;
 	flex-direction: row;
 	wrap: no-wrap;
@@ -11,7 +11,7 @@ const Header = styled.div`
 	align-items: center;
 
 	${media.lessThan('medium')`
-		padding: 0 25px;
+		padding: 15px 25px;
 	`}
 `;
 
