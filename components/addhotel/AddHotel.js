@@ -26,13 +26,13 @@ function AddHotelPage() {
 		event.preventDefault();
 
 		let newHotel = {
-			title: title.value,
-			city: city.value,
-			price: price.value,
-			description: description.value,
-			image: image.value,
-			country: country.value,
-			rooms: rooms.value,
+			title: title,
+			city: city,
+			price: price,
+			description: description,
+			image: image,
+			country: country,
+			rooms: rooms,
 		};
 
 		axios(
@@ -48,12 +48,13 @@ function AddHotelPage() {
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem('jwt')}`,
 				},
-				data: { data: { attributes: { newHotel } } },
+				data: { data: { newHotel } },
 			}
 		)
 			.then((response) => {
 				if (response.status === 200) {
 					console.log('response', response);
+					console.log(newHotel);
 				} else {
 					console.log('then error');
 				}
