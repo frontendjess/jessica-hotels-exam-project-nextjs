@@ -35,23 +35,32 @@ function AddHotelPage() {
 			rooms: rooms.value,
 		};
 
-		axios
-			.post(`${BASE_URL}/api/hotels`, {
+		axios(
+			// .post(`${BASE_URL}/api/hotels`, {
+			// 	headers: {
+			// 		Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+			// 	},
+			// 	data: newHotel,
+			// })
+			{
+				method: 'post',
+				url: `${BASE_URL}/api/hotels`,
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem('jwt')}`,
 				},
-				data: newHotel,
-			})
+				data: { data: { attributes: { newHotel } } },
+			}
+		)
 			.then((response) => {
 				if (response.status === 200) {
 					console.log('response', response);
-					console.log(data);
 				} else {
 					console.log('then error');
 				}
 			})
 			.catch((err) => {
-				console.log('catch error', err.response.data.error);
+				// console.log('catch error', err.response.data.error);
+				console.log('catch error', err);
 			});
 	};
 
@@ -70,14 +79,13 @@ function AddHotelPage() {
 			<AddHotelContainer>
 				<AddHotelTitle>Add a New Hotel Location</AddHotelTitle>
 
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={(event) => handleSubmit(event)}>
 					<AddHotelFormContainer>
 						<AddHotelFormColLeft>
 							<FormInputWrapper>
 								<label htmlFor='hotelTitle1'>Hotel Name:</label>
 								<FormInputBorder>
 									<FormControl
-										value={title}
 										onChange={(event) => setTitle(event.target.value)}
 										type='text'
 										id='hotelTitle1'
@@ -88,7 +96,6 @@ function AddHotelPage() {
 								<label htmlFor='hotelCity1'>City:</label>
 								<FormInputBorder>
 									<FormControl
-										value={city}
 										onChange={(event) => setCity(event.target.value)}
 										type='text'
 										id='hotelCity1'
@@ -99,7 +106,6 @@ function AddHotelPage() {
 								<label htmlFor='hotelCountry1'>Country:</label>
 								<FormInputBorder>
 									<FormControl
-										value={country}
 										onChange={(event) => setCountry(event.target.value)}
 										type='text'
 										id='hotelCountry1'
@@ -110,7 +116,6 @@ function AddHotelPage() {
 								<label htmlFor='hotelDesc1'>Description:</label>
 								<FormInputBorder>
 									<FormControl
-										value={description}
 										onChange={(event) => setDescription(event.target.value)}
 										type='textarea'
 										rows='3'
@@ -122,7 +127,6 @@ function AddHotelPage() {
 								<label htmlFor='hotelPrice1'>Price:</label>
 								<FormInputBorder>
 									<FormControl
-										value={price}
 										onChange={(event) => setPrice(event.target.value)}
 										type='text'
 										id='hotelPrice1'
@@ -133,7 +137,6 @@ function AddHotelPage() {
 								<label htmlFor='hotelImage1'>Image URL:</label>
 								<FormInputBorder>
 									<FormControl
-										value={image}
 										onChange={(event) => setImage(event.target.value)}
 										type='text'
 										id='hotelImage1'
@@ -144,7 +147,6 @@ function AddHotelPage() {
 								<label htmlFor='hotelRooms1'>Total Hotel Rooms:</label>
 								<FormInputBorder>
 									<FormControl
-										value={rooms}
 										onChange={(event) => setRooms(event.target.value)}
 										type='text'
 										id='hotelRooms1'
