@@ -48,7 +48,11 @@ function AddHotelPage() {
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem('jwt')}`,
 				},
-				data: { data: { newHotel } },
+				data: {
+					data: {
+						...newHotel,
+					},
+				},
 			}
 		)
 			.then((response) => {
