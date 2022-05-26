@@ -17,6 +17,7 @@ import {
 import axios from 'axios';
 import { BASE_URL } from '../../../configs/configs';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 function AddHotelPage() {
 	const [title, setTitle] = useState('');
@@ -65,6 +66,12 @@ function AddHotelPage() {
 				console.log('catch error', err);
 			});
 	};
+
+	const Router = useRouter();
+	function AdminReturnToLocationsHandle() {
+		event.preventDefault();
+		Router.push('/hotellocations');
+	}
 
 	return (
 		<>
@@ -155,7 +162,9 @@ function AddHotelPage() {
 				</form>
 
 				<AdminReturnButtonWrapper>
-					<AdminReturnButton primary>Go Back To Dashboard</AdminReturnButton>
+					<AdminReturnButton primary onClick={AdminReturnToLocationsHandle}>
+						Go Back To Dashboard
+					</AdminReturnButton>
 				</AdminReturnButtonWrapper>
 			</AddHotelContainer>
 		</>
