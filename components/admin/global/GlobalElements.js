@@ -87,4 +87,22 @@ const AdminTitle = styled.h1`
 	`}
 `;
 
-export { AdminButton, AdminReturnButton, AdminReturnButtonWrapper, AdminTitle };
+const AdminFunctionalityLink = styled.a`
+	color: var(--color-secondary);
+	cursor: pointer;
+	font-weight: var(--font-weight-semi-bold);
+	border-bottom: solid 1px var(--color-secondary);
+	transition: all 0.11s ease-out;
+
+	:hover {
+		color: var(--color-black);
+	}
+`;
+
+export {
+	AdminButton,
+	AdminReturnButton,
+	AdminReturnButtonWrapper,
+	AdminTitle,
+	AdminFunctionalityLink,
+};

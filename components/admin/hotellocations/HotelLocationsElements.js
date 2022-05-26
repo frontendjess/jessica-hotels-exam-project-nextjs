@@ -24,12 +24,44 @@ const AdminAddNewLocationLink = styled.a`
 `;
 
 const AdminHotelsTableContainer = styled.div`
-	backgound-color: var(--color-white);
+	padding-top: 100px;
+`;
+
+const AdminHotelsTable = styled.table`
 	padding: 50px;
+	background-color: var(--color-white);
+	width: 100%;
+
+	${media.lessThan('medium')`
+		padding: 25px;
+	`}
+
+	${media.lessThan('small')`
+		padding: 25px 0;
+	 `}
+
+	th {
+		padding: 1rem;
+
+		${media.lessThan('small')`
+			padding: 25px 0;
+		`}
+	}
+
+	td {
+	}
+`;
+
+const AdminHotelsTableHeadings = styled.h6`
+	font-size: var(--h6-size);
+	letter-spacing: var(--letter-spacing-size);
+	text-transform: uppercase;
 `;
 
 export {
 	AdminHotelLocationsContainer,
 	AdminAddNewLocationLink,
 	AdminHotelsTableContainer,
+	AdminHotelsTable,
+	AdminHotelsTableHeadings,
 };

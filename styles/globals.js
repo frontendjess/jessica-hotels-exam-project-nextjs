@@ -123,6 +123,7 @@ const GlobalStyle = createGlobalStyle`
         line-height: var(--line-height-size);
     }
 
+
     input {
         -webkit-appearance: none;
         -moz-appearance: none;
