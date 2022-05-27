@@ -166,7 +166,7 @@ const FooterContent = () => {
 						<Link href='/#ourconcept'>
 							<a>Our Concept</a>
 						</Link>
-						<Link href='/contact'>
+						<Link href='/contactus'>
 							<a>Contact Us</a>
 						</Link>
 						<Link href='/adminlogin'>

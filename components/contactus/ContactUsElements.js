@@ -85,7 +85,7 @@ const ContactEnquiryTitle = styled.h4`
 const ContactEnquiryRow = styled.div`
 	display: flex;
 	justify-content: space-between;
-	gap: 25px;
+	gap: 50px;
 	padding-top: 25px;
 
 	${media.lessThan('medium')`

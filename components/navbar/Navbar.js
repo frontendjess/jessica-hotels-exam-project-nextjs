@@ -110,8 +110,8 @@ const Navbar = ({ toggle }) => {
 								</Link>
 							</Navlink>
 							<Navlink>
-								<Link href='/contact'>
-									<a>Contact</a>
+								<Link href='/contactus'>
+									<a>Contact Us</a>
 								</Link>
 							</Navlink>
 							<Navlink>

@@ -56,8 +56,8 @@ const Sidebar = ({ isOpen, toggle }) => {
 								</Link>
 							</SidebarLink>
 							<SidebarLink>
-								<Link className='nav-link' href='/contact' isOpen={isOpen}>
-									<a>Contact</a>
+								<Link className='nav-link' href='/contactus' isOpen={isOpen}>
+									<a>Contact Us</a>
 								</Link>
 							</SidebarLink>
 							<SidebarLink>
