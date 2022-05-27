@@ -18,6 +18,8 @@ import axios from 'axios';
 import { BASE_URL } from '../../../configs/configs';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { getUser } from '../../../libs/localStorageHelpers';
+import RouteGuardPage from '../../../libs/routeGuard';
 
 function AddHotelPage() {
 	const [title, setTitle] = useState('');
@@ -45,7 +47,7 @@ function AddHotelPage() {
 			method: 'post',
 			url: `${BASE_URL}/api/hotels`,
 			headers: {
-				Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+				Authorization: `Bearer ${getUser('jwt')}`,
 			},
 			data: {
 				data: {
@@ -66,6 +68,8 @@ function AddHotelPage() {
 				console.log('catch error', err);
 			});
 	};
+
+	RouteGuardPage();
 
 	const Router = useRouter();
 	function AdminReturnToLocationsHandle() {

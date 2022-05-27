@@ -33,7 +33,9 @@ function Dashboard() {
 					<AdminTitle>Admin Dashboard</AdminTitle>
 					<AdminDashboardFunctionalitiesContainer>
 						<AdminDashboardFunctionalitiesCol>
-							<AdminReturnButton primary>General Inbox</AdminReturnButton>
+							<AdminReturnButton primary onClick={AdminToGeneralInboxHandle}>
+								General Enquiries Inbox
+							</AdminReturnButton>
 						</AdminDashboardFunctionalitiesCol>
 						<AdminDashboardFunctionalitiesCol>
 							<AdminReturnButton primary>
