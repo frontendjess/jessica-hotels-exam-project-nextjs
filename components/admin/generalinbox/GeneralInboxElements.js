@@ -19,22 +19,25 @@ const GeneralInboxTable = styled.table`
 	width: 100%;
 
 	${media.lessThan('medium')`
-    padding: 25px;
-`}
+        padding: 25px;
+    `}
 
 	${media.lessThan('small')`
-    padding: 25px 0;
- `}
-
-th {
-		padding: 1rem;
-
-		${media.lessThan('small')`
         padding: 25px 0;
     `}
+
+    th {
+		padding: 1rem;
+
+		${media.lessThan('medium')`
+            padding: 25px 0;
+        `}
 	}
 
 	td {
+		${media.lessThan('medium')`
+            display: block;
+        `}
 	}
 `;
 

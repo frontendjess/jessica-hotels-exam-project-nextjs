@@ -10,11 +10,27 @@ import {
 import {
 	AdminTitle,
 	AdminFunctionalityLink,
+	AdminReturnButtonWrapper,
+	AdminReturnButton,
 } from '../../components/admin/global/GlobalElements';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 function GeneralInbox({ enquiries }) {
+	useEffect(() => {
+		if (localStorage.getItem('jwt') === null) {
+			window.location.href = './login';
+		}
+	}, []);
+
+	const Router = useRouter();
+
+	function AdminReturnToDashboardHandle() {
+		event.preventDefault();
+		Router.push('/dashboard');
+	}
 	return (
 		<>
 			<Page title='General Enquiries Inbox'>
@@ -34,13 +50,17 @@ function GeneralInbox({ enquiries }) {
 										<GeneralInboxTableHeadings>From</GeneralInboxTableHeadings>
 									</td>
 									<td>
-										<GeneralInboxTableHeadings>
-											Status
-										</GeneralInboxTableHeadings>
+										<GeneralInboxTableHeadings>Email</GeneralInboxTableHeadings>
 									</td>
 									<td>
 										<GeneralInboxTableHeadings>
 											Message
+										</GeneralInboxTableHeadings>
+									</td>
+									<td>
+										{' '}
+										<GeneralInboxTableHeadings>
+											Respond
 										</GeneralInboxTableHeadings>
 									</td>
 								</tr>
@@ -53,13 +73,24 @@ function GeneralInbox({ enquiries }) {
 											{enquiry.attributes.firstname}{' '}
 											{enquiry.attributes.lastname}
 										</td>
-										<td>{enquiry.attributes.status}</td>
+										<td>{enquiry.attributes.email}</td>
 										<td>{enquiry.attributes.message}</td>
+										<td>
+											<Link href='mailto:'>
+												<AdminFunctionalityLink>Open</AdminFunctionalityLink>
+											</Link>
+										</td>
 									</tr>
 								))}
 							</tbody>
 						</GeneralInboxTable>
 					</GeneralInboxTableContainer>
+
+					<AdminReturnButtonWrapper>
+						<AdminReturnButton primary onClick={AdminReturnToDashboardHandle}>
+							Go Back To Dashboard
+						</AdminReturnButton>
+					</AdminReturnButtonWrapper>
 				</GeneralInboxContainer>
 			</Page>
 		</>

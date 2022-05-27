@@ -83,6 +83,7 @@ function ContactUs() {
 											type='text'
 											placeholder='First Name'
 											onChange={(event) => setFirstName(event.target.value)}
+											required
 										/>
 									</ContactEnquiryCol>
 									<ContactEnquiryCol>
@@ -115,6 +116,7 @@ function ContactUs() {
 											type='text'
 											placeholder='Email Address'
 											onChange={(event) => setEmailAddress(event.target.value)}
+											required
 										/>
 									</ContactEnquiryCol>
 								</ContactEnquiryRow>

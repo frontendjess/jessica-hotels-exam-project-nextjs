@@ -38,17 +38,22 @@ const AdminHotelsTable = styled.table`
 
 	${media.lessThan('small')`
 		padding: 25px 0;
+		
 	 `}
 
 	th {
 		padding: 1rem;
 
-		${media.lessThan('small')`
+		${media.lessThan('medium')`
 			padding: 25px 0;
 		`}
 	}
 
 	td {
+		${media.lessThan('medium')`
+            display: block;
+
+        `}
 	}
 `;
 
