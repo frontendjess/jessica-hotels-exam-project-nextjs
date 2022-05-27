@@ -13,7 +13,6 @@ const AddHotelFormContainer = styled.div`
 	padding: 50px;
 	background-color: var(--color-white);
 	display: flex;
-
 	flex-wrap: wrap;
 `;
 

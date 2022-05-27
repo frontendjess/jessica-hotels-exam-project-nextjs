@@ -88,6 +88,9 @@ const Button = styled.button`
 		props.primary ? 'var(--color-button-primary)' : 'white'};
 
 	font-size: 1rem;
+	font-family: var(--font-body);
+	text-transform: uppercase;
+	letter-spacing: var(--letter-spacing-size);
 	padding: 1.15rem 1.75rem;
 	border: none;
 	border-radius: 0px;
