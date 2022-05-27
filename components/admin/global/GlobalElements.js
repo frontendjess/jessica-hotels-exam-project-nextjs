@@ -3,7 +3,9 @@ import media from 'styled-media-query';
 
 const AdminButton = styled.button`
 	background: ${(props) =>
-		props.primary ? 'var(--color-button-admin)' : 'var(--color-primary-rgb)'};
+		props.primary
+			? 'var(--color-button-admin)'
+			: 'var(--color-button-primary-rgb)'};
 
 	font-size: 1rem;
 	padding: 1.15rem 1.75rem;

@@ -34,27 +34,39 @@ const Sidebar = ({ isOpen, toggle }) => {
 							<a>Home</a>
 						</Link>
 					</SidebarLink>
-					<SidebarLink>
-						<Link className='nav-link' href='/hotels' isOpen={isOpen}>
-							<a>Hotels</a>
-						</Link>
-					</SidebarLink>
-					<SidebarLink>
-						<Link className='nav-link' href='/contact' isOpen={isOpen}>
-							<a>Contact</a>
-						</Link>
-					</SidebarLink>
-					<SidebarLink>
-						{user ? (
-							<Link className='nav-link' href='/logout' isOpen={isOpen}>
-								<a onClick={handleOnClick}>Logout</a>
-							</Link>
-						) : (
-							<Link className='nav-link' href='/login' isOpen={isOpen}>
-								<a>Login</a>
-							</Link>
-						)}
-					</SidebarLink>
+
+					{user ? (
+						<>
+							<SidebarLink>
+								<Link className='nav-link' href='/dashboard' isOpen={isOpen}>
+									<a>Dashboard</a>
+								</Link>
+							</SidebarLink>
+							<SidebarLink>
+								<Link className='nav-link' href='/logout' isOpen={isOpen}>
+									<a onClick={handleOnClick}>Logout</a>
+								</Link>
+							</SidebarLink>
+						</>
+					) : (
+						<>
+							<SidebarLink>
+								<Link className='nav-link' href='/hotels' isOpen={isOpen}>
+									<a>Hotels</a>
+								</Link>
+							</SidebarLink>
+							<SidebarLink>
+								<Link className='nav-link' href='/contact' isOpen={isOpen}>
+									<a>Contact</a>
+								</Link>
+							</SidebarLink>
+							<SidebarLink>
+								<Link className='nav-link' href='/login' isOpen={isOpen}>
+									<a>Login</a>
+								</Link>
+							</SidebarLink>
+						</>
+					)}
 				</SidebarMenu>
 			</SidebarWrapper>
 		</SidebarContainer>

@@ -163,7 +163,7 @@ function AddHotelPage() {
 
 				<AdminReturnButtonWrapper>
 					<AdminReturnButton primary onClick={AdminReturnToLocationsHandle}>
-						Go Back To Dashboard
+						Go Back To Locations
 					</AdminReturnButton>
 				</AdminReturnButtonWrapper>
 			</AddHotelContainer>
