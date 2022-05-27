@@ -4,7 +4,7 @@ import media from 'styled-media-query';
 const SpecificHotelHeroContainer = styled.div`
 	width: 100vw;
 	height: 70vh;
-	background: url('/images/hotels/specifichotelhero.png') center/cover no-repeat;
+	background: url('/images/hotels/specifichotelhero.jpg') center/cover no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -23,7 +23,7 @@ const SpecificHotelHeroTitle = styled.h1`
 	text-shadow: 4px 4px var(--color-black);
 
 	${media.lessThan('medium')`
-        font-size: var(--mobile-h1-size);
+        font-size: var(--h1-mobile-size);
         letter-spacing: var(--letter-spacing-xxl);
         line-height: var(--line-height-xl);
     `}
