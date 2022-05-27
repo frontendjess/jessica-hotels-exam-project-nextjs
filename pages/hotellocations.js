@@ -18,7 +18,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { BASE_URL } from '../configs/configs';
 import axios from 'axios';
-
 import { useEffect } from 'react';
 
 function Hotellocations({ hotels }) {
@@ -100,7 +99,7 @@ function Hotellocations({ hotels }) {
 	);
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const res = await axios.get(`${BASE_URL}/api/hotels`);
 	const hotels = res.data.data;
 
