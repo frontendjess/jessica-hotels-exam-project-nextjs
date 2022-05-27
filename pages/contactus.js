@@ -19,10 +19,6 @@ import { useState } from 'react';
 
 function ContactUs() {
 	const Router = useRouter();
-	function SendEnquiryHandle(event) {
-		event.preventDefault();
-		Router.push('/enquirysent');
-	}
 
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
@@ -33,6 +29,7 @@ function ContactUs() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+		Router.push('/enquirysent');
 
 		let newMessage = {
 			firstname: firstName,

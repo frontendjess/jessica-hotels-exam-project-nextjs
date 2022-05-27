@@ -7,9 +7,14 @@ import {
 	GeneralInboxTable,
 	GeneralInboxTableHeadings,
 } from '../../components/admin/generalinbox/GeneralInboxElements';
-import { AdminTitle } from '../../components/admin/global/GlobalElements';
+import {
+	AdminTitle,
+	AdminFunctionalityLink,
+} from '../../components/admin/global/GlobalElements';
 
-function GeneralInbox() {
+import Link from 'next/link';
+
+function GeneralInbox({ enquiries }) {
 	return (
 		<>
 			<Page title='General Enquiries Inbox'>
@@ -34,10 +39,25 @@ function GeneralInbox() {
 										</GeneralInboxTableHeadings>
 									</td>
 									<td>
-										<GeneralInboxTableHeadings>View</GeneralInboxTableHeadings>
+										<GeneralInboxTableHeadings>
+											Message
+										</GeneralInboxTableHeadings>
 									</td>
 								</tr>
 							</thead>
+							<tbody>
+								{enquiries.map((enquiry) => (
+									<tr key={enquiry.id}>
+										<th scope='row'>{enquiry.id}</th>
+										<td>
+											{enquiry.attributes.firstname}{' '}
+											{enquiry.attributes.lastname}
+										</td>
+										<td>{enquiry.attributes.status}</td>
+										<td>{enquiry.attributes.message}</td>
+									</tr>
+								))}
+							</tbody>
 						</GeneralInboxTable>
 					</GeneralInboxTableContainer>
 				</GeneralInboxContainer>
