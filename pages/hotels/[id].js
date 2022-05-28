@@ -177,7 +177,6 @@ export default function SpecificHotel({ hotelData }) {
 }
 
 export async function getStaticPaths() {
-	// Return a list of possible value for id
 	const res = await axios.get(`${BASE_URL}/api/hotels`);
 	const hotels = res.data.data;
 	const paths = hotels.map((hotel) => {

@@ -155,6 +155,10 @@ const GlobalStyle = createGlobalStyle`
         padding-bottom: 50px;
     }
 
+    .inner-content-padding-sm-top {
+        padding-top: 25px;
+    }
+
     .inner-content-padding-sm-btm {
         padding-bottom: 25px;
     }

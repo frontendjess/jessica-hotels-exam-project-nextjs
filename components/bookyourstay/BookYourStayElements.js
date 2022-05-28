@@ -29,4 +29,67 @@ const BookYourStayHeroTitle = styled.h1`
     `}
 `;
 
-export { BookYourStayHeroContainer, BookYourStayHeroTitle };
+const BookYourStayContentContainer = styled.div`
+	padding: 100px 100px 0 100px;
+
+	${media.lessThan('medium')`
+		padding: 100px 25px 0 25px;
+	`}
+`;
+
+const BookYourStaySelectedRoomContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 150px;
+		height: 5px;
+		background-color: var(--color-primary);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+`;
+
+const BookYourStaySelectedRoomRow = styled.div`
+	width: 100%;
+`;
+
+const BookYourStayContentTitles = styled.h5`
+	font-size: var(--h5-size);
+	letter-spacing: var(--letter-spacing-md);
+	line-height: var(--line-height-md);
+	font-weight: var(--font-weight-reg);
+	text-transform: uppercase;
+	padding-top: 25px;
+`;
+
+const BookYourStaySelectedRoomColContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 0;
+`;
+
+const BookYourStaySelectedRoomColLeft = styled.div`
+	width: 45%;
+`;
+
+const BookYourStaySelectedRoomColRight = styled.div`
+	width: 45%;
+`;
+
+export {
+	BookYourStayHeroContainer,
+	BookYourStayHeroTitle,
+	BookYourStayContentContainer,
+	BookYourStaySelectedRoomContainer,
+	BookYourStaySelectedRoomRow,
+	BookYourStayContentTitles,
+	BookYourStaySelectedRoomColContainer,
+	BookYourStaySelectedRoomColLeft,
+	BookYourStaySelectedRoomColRight,
+};
