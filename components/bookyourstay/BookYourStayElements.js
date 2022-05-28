@@ -72,14 +72,49 @@ const BookYourStaySelectedRoomColContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	padding: 50px 0;
+
+	${media.lessThan('medium')`
+		flex-direction: column;
+	`}
 `;
 
 const BookYourStaySelectedRoomColLeft = styled.div`
 	width: 45%;
+
+	${media.lessThan('medium')`
+		width: 100%;
+	`}
 `;
 
 const BookYourStaySelectedRoomColRight = styled.div`
 	width: 45%;
+
+	${media.lessThan('medium')`
+		padding-top: 50px;
+		width: 100%;
+	`}
+`;
+
+const BookYourStayCustomizeColContainer = styled.div`
+	padding-top: 50px;
+	display: flex;
+	gap: 50px;
+	flex-wrap: wrap;
+
+	${media.lessThan('medium')`
+		flex-direction: column;
+	`}
+`;
+
+const BookYourStayCustomizeCol = styled.div`
+	flex: 1 0 30%;
+	border: solid 1px yellow;
+
+	text-align: center;
+
+	${media.lessThan('medium')`
+		flex-direction: column;
+	`}
 `;
 
 export {
@@ -92,4 +127,6 @@ export {
 	BookYourStaySelectedRoomColContainer,
 	BookYourStaySelectedRoomColLeft,
 	BookYourStaySelectedRoomColRight,
+	BookYourStayCustomizeColContainer,
+	BookYourStayCustomizeCol,
 };

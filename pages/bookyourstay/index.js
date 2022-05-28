@@ -9,7 +9,11 @@ import {
 	BookYourStaySelectedRoomColContainer,
 	BookYourStaySelectedRoomColLeft,
 	BookYourStaySelectedRoomColRight,
+	BookYourStayCustomizeColContainer,
+	BookYourStayCustomizeCol,
 } from '../../components/bookyourstay/BookYourStayElements';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import Select from 'react-select';
 import { useState } from 'react';
@@ -72,9 +76,96 @@ function Bookyourstay() {
 								<div className='inner-content-padding-sm-top'>
 									{HotelRoomSelect()}
 								</div>
+								<div>
+									<p className='inner-content-padding-top'>
+										Cancellation policy: The booking price includes
+										accommodation, VAT, free wifi, and the breakfast buffet.
+										Your card will charged automatically 24 hours prior to check
+										in. No refunds after this time. Please contact us if you
+										need to change your booking. Thank you.
+									</p>
+								</div>
 							</BookYourStaySelectedRoomColRight>
 						</BookYourStaySelectedRoomColContainer>
 					</BookYourStaySelectedRoomContainer>
+
+					<div className='section-padding-top'>
+						<BookYourStaySelectedRoomContainer>
+							<BookYourStaySelectedRoomRow>
+								<BookYourStayContentTitles>
+									2 / 5 Customize Your Room
+								</BookYourStayContentTitles>
+							</BookYourStaySelectedRoomRow>
+
+							<BookYourStayCustomizeColContainer>
+								<BookYourStayCustomizeCol>
+									<Image
+										src='/images/hotels/bookyourstay-bed01.jpg'
+										layout='responsive'
+										alt='hotel room bed'
+										width={550}
+										height={366}
+									/>
+									<div className='inner-content-padding-sm-top simple-flex-row'>
+										<p>
+											<FontAwesomeIcon
+												className='features-icon'
+												icon={faCircleExclamation}
+											/>{' '}
+											Double Bed
+										</p>
+									</div>
+								</BookYourStayCustomizeCol>
+								<BookYourStayCustomizeCol>
+									{' '}
+									<Image
+										src='/images/hotels/bookyourstay-bed02.jpg'
+										layout='responsive'
+										alt='hotel room bed'
+										width={550}
+										height={366}
+									/>
+									<div className='inner-content-padding-sm-top'>
+										<p>
+											<FontAwesomeIcon
+												className='features-icon'
+												icon={faCircleExclamation}
+											/>{' '}
+											Single Beds
+										</p>
+									</div>
+								</BookYourStayCustomizeCol>
+								<BookYourStayCustomizeCol>
+									{' '}
+									<Image
+										src='/images/hotels/bookyourstay-bed03.jpg'
+										layout='responsive'
+										alt='hotel room bed'
+										width={550}
+										height={366}
+									/>
+									<div className='inner-content-padding-sm-top'>
+										<p>
+											<FontAwesomeIcon
+												className='features-icon'
+												icon={faCircleExclamation}
+											/>{' '}
+											Extra Bed
+										</p>
+									</div>
+								</BookYourStayCustomizeCol>
+							</BookYourStayCustomizeColContainer>
+						</BookYourStaySelectedRoomContainer>
+
+						<div className='inner-content-padding-sm-top'>
+							<p>
+								Policy: We always try to cater to our guests needs. Availability
+								may be limited. In case we cannot guarantee the bed of choice we
+								will contact you. Our suites only hold double beds, with extra
+								bed / sofabed available.
+							</p>
+						</div>
+					</div>
 				</BookYourStayContentContainer>
 			</Page>
 		</>

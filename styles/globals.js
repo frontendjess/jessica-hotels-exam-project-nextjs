@@ -171,6 +171,13 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
     }
 
+    .simple-flex-row {
+        display: flex;
+        justify-content: center;
+        align-center: center;
+        border: solid 1px red;
+    }
+
     /* ICONS */
 
     .features-icon {
