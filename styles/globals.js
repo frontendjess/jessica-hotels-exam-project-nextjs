@@ -124,12 +124,6 @@ const GlobalStyle = createGlobalStyle`
     }
 
 
-    input {
-        -webkit-appearance: none;
-        -moz-appearance: none;
- 
-    }
-
     .price {
         color: var(--color-secondary);
     }
@@ -167,6 +161,10 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 25px;
     }
 
+    .padding-left-xsm {
+        padding-left: var(--size-xs);
+    }
+
     .oslo-hook {
         width: 100%;
     }
@@ -174,8 +172,11 @@ const GlobalStyle = createGlobalStyle`
     .simple-flex-row {
         display: flex;
         justify-content: center;
-        align-center: center;
-        border: solid 1px red;
+    }
+
+    .simple-flex-row-start {
+        display: flex;
+        justify-content: flex-start;
     }
 
     /* ICONS */
@@ -183,6 +184,11 @@ const GlobalStyle = createGlobalStyle`
     .features-icon {
         width: 32px;
         height: 32px;
+    }
+
+    .bookyourstay-icon {
+        width: 24px;
+        height: 24px;
     }
 
     .hamburger-menu {

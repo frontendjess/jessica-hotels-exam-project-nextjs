@@ -108,13 +108,15 @@ const BookYourStayCustomizeColContainer = styled.div`
 
 const BookYourStayCustomizeCol = styled.div`
 	flex: 1 0 30%;
-	border: solid 1px yellow;
-
 	text-align: center;
 
 	${media.lessThan('medium')`
 		flex-direction: column;
 	`}
+`;
+
+const BookYourStayCheckBoxes = styled.input`
+	margin-right: 1rem;
 `;
 
 export {
@@ -129,4 +131,5 @@ export {
 	BookYourStaySelectedRoomColRight,
 	BookYourStayCustomizeColContainer,
 	BookYourStayCustomizeCol,
+	BookYourStayCheckBoxes,
 };
