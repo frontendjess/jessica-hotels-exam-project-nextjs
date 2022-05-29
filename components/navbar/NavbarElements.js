@@ -20,6 +20,15 @@ const Navlink = styled.li`
 	padding: 0 0 0 50px;
 	text-decoration: none;
 	list-style-type: none;
+
+	a {
+		color: var(--color-black);
+		transition: all 0.11s ease-out;
+	}
+
+	a:hover {
+		background-color: var(--color-primary);
+	}
 `;
 
 const MobileIcon = styled.div`

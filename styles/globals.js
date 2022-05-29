@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
         --font-weight-bold: 700;
 
         /* DESKTOP HEADINGS */
-        --h1-size: 7.594rem;
+        --h1-size: 7.25rem;
         --h2-size: 5.063rem;
         --h3-size: 3.375rem;
         --h4-size: 2.25rem;

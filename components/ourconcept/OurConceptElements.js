@@ -3,6 +3,14 @@ import media from 'styled-media-query';
 
 const OurConceptContainer = styled.div`
 	background-color: var(--color-black);
+
+	${media.lessThan('large')`
+		padding-top: 50vh;
+	`}
+
+	${media.lessThan('small')`
+		padding-top: 70vh;
+	`}
 `;
 
 const OurConceptAboutContainer = styled.div`

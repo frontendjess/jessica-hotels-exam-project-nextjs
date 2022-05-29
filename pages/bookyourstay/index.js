@@ -29,6 +29,9 @@ import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import Select from 'react-select';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
+import { BASE_URL } from '../../configs/configs';
 
 function Bookyourstay() {
 	const [selectedRoomOption, setSelectedRoomOption] = useState('null');
@@ -87,6 +90,16 @@ function Bookyourstay() {
 	const [isChampagneChecked, setIsChampagneChecked] = useState(false);
 	const [isParkingChecked, setIsParkingChecked] = useState(false);
 
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [emailAddress, setEmailAddress] = useState('');
+	const [phoneNumber, setPhoneNumber] = useState('');
+	const [streetAddress, setStreetAddress] = useState('');
+	const [zipCode, setZipCode] = useState('');
+	const [city, setCity] = useState('');
+	const [country, setCountry] = useState('');
+	const [specialRequests, setSpecialRequests] = useState('');
+
 	const handleOnChangeLateOut = () => {
 		setIsLateOutChecked(!isLateOutChecked);
 	};
@@ -99,6 +112,50 @@ function Bookyourstay() {
 		setIsParkingChecked(!isParkingChecked);
 	};
 
+	const Router = useRouter();
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		Router.push('/confirmation');
+
+		let newEnquiry = {
+			roomtype: selectedRoomOption,
+			bedoptions: selectedBedOption,
+
+			firstname: firstName,
+			lastname: lastName,
+			emailaddress: emailAddress,
+			phonenumber: phoneNumber,
+			streetaddress: streetAddress,
+			city: city,
+			country: country,
+			zipcode: zipCode,
+			specialrequests: specialRequests,
+		};
+
+		axios({
+			method: 'post',
+			url: `${BASE_URL}/api/hotel-enquiries`,
+			data: {
+				data: {
+					...newEnquiry,
+				},
+			},
+		})
+			.then((response) => {
+				if (response.status === 200) {
+					console.log('response', response);
+					console.log(newMessage);
+				} else {
+					console.log('then error');
+				}
+			})
+			.catch((err) => {
+				// console.log('catch error', err.response.data.error);
+				console.log('catch error', err);
+			});
+	};
+
 	return (
 		<>
 			<Page title='Book Your Stay'>
@@ -106,7 +163,7 @@ function Bookyourstay() {
 					<BookYourStayHeroTitle>Book Your Stay_</BookYourStayHeroTitle>
 				</BookYourStayHeroContainer>
 
-				<form>
+				<form onSubmit={(event) => handleSubmit(event)}>
 					<BookYourStayContentContainer>
 						<BookYourStaySelectedRoomContainer>
 							<BookYourStaySelectedRoomRow>
@@ -119,7 +176,7 @@ function Bookyourstay() {
 								<BookYourStaySelectedRoomColLeft>
 									<Image
 										src='/images/hotels/bookyourstayselectroom.jpg'
-										layout='intrinsic'
+										layout='responsive'
 										alt='hotel room'
 										width={550}
 										height={366}
@@ -348,6 +405,7 @@ function Bookyourstay() {
 												<PersonalInformationInput
 													type='text'
 													placeholder='First Name'
+													onChange={(event) => setFirstName(event.target.value)}
 													required
 												/>
 											</PersonalInformationEnquiryCol>
@@ -355,6 +413,7 @@ function Bookyourstay() {
 												<PersonalInformationInput
 													type='text'
 													placeholder='Last Name'
+													onChange={(event) => setLastName(event.target.value)}
 													required
 												/>
 											</PersonalInformationEnquiryCol>
@@ -365,6 +424,9 @@ function Bookyourstay() {
 												<PersonalInformationInput
 													type='text'
 													placeholder='Email Address'
+													onChange={(event) =>
+														setEmailAddress(event.target.value)
+													}
 													required
 												/>
 											</PersonalInformationEnquiryCol>
@@ -372,6 +434,9 @@ function Bookyourstay() {
 												<PersonalInformationInput
 													type='tel'
 													placeholder='Phone Number'
+													onChange={(event) =>
+														setPhoneNumber(event.target.value)
+													}
 													required
 												/>
 											</PersonalInformationEnquiryCol>
@@ -382,6 +447,9 @@ function Bookyourstay() {
 												<PersonalInformationInput
 													type='text'
 													placeholder='Street Address'
+													onChange={(event) =>
+														setStreetAddress(event.target.value)
+													}
 													required
 												/>
 											</PersonalInformationEnquiryCol>
@@ -389,6 +457,7 @@ function Bookyourstay() {
 												<PersonalInformationInput
 													type='number'
 													placeholder='Zip Code'
+													onChange={(event) => setZipCode(event.target.value)}
 													required
 												/>
 											</PersonalInformationEnquiryCol>
@@ -399,6 +468,7 @@ function Bookyourstay() {
 												<PersonalInformationInput
 													type='text'
 													placeholder='City'
+													onChange={(event) => setCity(event.target.value)}
 													required
 												/>
 											</PersonalInformationEnquiryCol>
@@ -406,6 +476,7 @@ function Bookyourstay() {
 												<PersonalInformationInput
 													type='text'
 													placeholder='Country'
+													onChange={(event) => setCountry(event.target.value)}
 													required
 												/>
 											</PersonalInformationEnquiryCol>
@@ -417,7 +488,9 @@ function Bookyourstay() {
 													type='textarea'
 													rows='1'
 													placeholder='Any special requests...'
-													required
+													onChange={(event) =>
+														setSpecialRequests(event.target.value)
+													}
 												/>
 											</PersonalInformationEnquiryCol>
 										</PersonalInformationEnquiryRow>
