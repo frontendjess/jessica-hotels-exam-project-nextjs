@@ -19,7 +19,7 @@ function Dashboard() {
 
 	function AdminToHotelEnquiriesInboxHandle(event) {
 		event.preventDefault();
-		Router.push('/hotelsenquiriesinbox');
+		Router.push('/hotelenquiriesinbox');
 	}
 
 	function AdminToHotelLocationsHandle(event) {
@@ -38,7 +38,9 @@ function Dashboard() {
 							</AdminReturnButton>
 						</AdminDashboardFunctionalitiesCol>
 						<AdminDashboardFunctionalitiesCol>
-							<AdminReturnButton primary>
+							<AdminReturnButton
+								primary
+								onClick={AdminToHotelEnquiriesInboxHandle}>
 								Hotels Enquiries Inbox
 							</AdminReturnButton>
 						</AdminDashboardFunctionalitiesCol>
