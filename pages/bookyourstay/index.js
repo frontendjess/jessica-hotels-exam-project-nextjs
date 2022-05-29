@@ -38,8 +38,8 @@ function Bookyourstay() {
 	const [selectedBedOption, setSelectedBedOption] = useState('null');
 
 	const hotelRoomOptions = [
-		{ value: 'standard', price: '1500', label: 'Standard Room' },
-		{ value: 'deluxe', price: '2000', label: 'Deluxe Room' },
+		{ value: 'standardroom', price: '1500', label: 'Standard Room' },
+		{ value: 'deluxeroom', price: '2000', label: 'Deluxe Room' },
 		{ value: 'juniorsuite', price: '3000', label: 'Junior Suite' },
 		{ value: 'presidentialsuite', price: '6000', label: 'Presidential Suite' },
 	];
@@ -121,7 +121,9 @@ function Bookyourstay() {
 		let newEnquiry = {
 			roomtype: selectedRoomOption,
 			bedoptions: selectedBedOption,
-
+			latecheckout: isLateOutChecked,
+			champagne: isChampagneChecked,
+			parking: isParkingChecked,
 			firstname: firstName,
 			lastname: lastName,
 			emailaddress: emailAddress,
@@ -145,7 +147,7 @@ function Bookyourstay() {
 			.then((response) => {
 				if (response.status === 200) {
 					console.log('response', response);
-					console.log(newMessage);
+					console.log(newEnquiry);
 				} else {
 					console.log('then error');
 				}
