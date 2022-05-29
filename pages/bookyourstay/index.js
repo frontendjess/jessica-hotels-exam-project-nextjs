@@ -119,8 +119,8 @@ function Bookyourstay() {
 		Router.push('/confirmation');
 
 		let newEnquiry = {
-			roomtype: selectedRoomOption,
-			bedoptions: selectedBedOption,
+			roomtype: selectedRoomOption.value,
+			bedoptions: selectedBedOption.value,
 			latecheckout: isLateOutChecked,
 			champagne: isChampagneChecked,
 			parking: isParkingChecked,
