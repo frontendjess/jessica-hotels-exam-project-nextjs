@@ -67,6 +67,10 @@ const ContactEnquiryContainer = styled.div`
 		top: 50px;
 		left: 0;
 	}
+
+	${media.lessThan('medium')`
+	padding: 100px 25px 100px 25rpx;
+	`}
 `;
 
 const ContactEnquiryTitle = styled.h4`

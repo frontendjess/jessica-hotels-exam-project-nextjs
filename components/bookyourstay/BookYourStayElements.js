@@ -119,6 +119,120 @@ const BookYourStayCheckBoxes = styled.input`
 	margin-right: 1rem;
 `;
 
+const BookYourStayPersonalInfoContainer = styled.div`
+	padding: 50px 50px 100px 50px;
+	background-color: var(--color-white-bg);
+
+	${media.lessThan('medium')`
+		padding: 50px 25px 50px 25rpx;
+	`}
+`;
+
+const PersonalInformationEnquiryRow = styled.div`
+	display: flex;
+	justify-content: space-between;
+	gap: 50px;
+	padding-top: 25px;
+
+	${media.lessThan('medium')`
+		flex-direction: column;
+	`}
+`;
+
+const PersonalInformationEnquiryCol = styled.div`
+	width: 100%;
+	border-bottom: solid 1px var(--color-gray);
+`;
+
+const PersonalInformationInput = styled.input`
+	width: 100%;
+	padding: 1rem;
+	border: none;
+	background-color: transparent;
+	font-family: var(--font-body);
+	font-size: var(--font-size);
+`;
+
+const PersonalInformationTextArea = styled.textarea`
+	width: 100%;
+	padding: 1rem;
+	border: none;
+	background-color: transparent;
+	font-family: var(--font-body);
+	font-size: var(--font-size);
+`;
+
+const SummaryContainer = styled.div`
+	padding: 50px;
+	background-color: var(--color-white-bg);
+
+	${media.lessThan('medium')`
+		padding: 50px 25px 50px 25rpx;
+	`}
+`;
+
+const SummaryRow = styled.div`
+	display: flex;
+	justify-content: space-between;
+
+	${media.lessThan('medium')`
+		flex-direction: column;
+	`}
+`;
+
+const SummaryColLeft = styled.div`
+	text-align: left;
+
+	p {
+		color: var(--color-secondary);
+		font-weight: var(--font-weight-bold);
+	}
+`;
+
+const SummaryColRight = styled.div`
+	text-align: right;
+
+	p {
+		color: var(--color-secondary);
+		font-weight: var(--font-weight-bold);
+	}
+
+	${media.lessThan('medium')`
+		text-align: left;
+		padding-top: 50px;
+	`}
+`;
+
+const BookYourStaySubmitButton = styled.button`
+	background: ${(props) =>
+		props.primary ? 'var(--color-button-primary)' : 'white'};
+
+	font-size: 1rem;
+	font-family: var(--font-body);
+	text-transform: uppercase;
+	letter-spacing: var(--letter-spacing-size);
+	padding: 1.15rem 1.75rem;
+	border: none;
+	border-radius: 0px;
+	transition: all 0.11s ease-out;
+
+	:hover {
+		border: 1px solid var(--color-black);
+		transform: translate(-0.25rem, -0.25rem);
+		box-shadow: 0.25rem 0.25rem #000;
+		cursor: pointer;
+	}
+
+	a {
+		color: var(--color-black);
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: var(--font-body);
+		font-size: var(--font-size);
+		letter-spacing: var(--letter-spacing-size);
+	}
+`;
+
 export {
 	BookYourStayHeroContainer,
 	BookYourStayHeroTitle,
@@ -132,4 +246,14 @@ export {
 	BookYourStayCustomizeColContainer,
 	BookYourStayCustomizeCol,
 	BookYourStayCheckBoxes,
+	BookYourStayPersonalInfoContainer,
+	PersonalInformationEnquiryRow,
+	PersonalInformationEnquiryCol,
+	PersonalInformationInput,
+	PersonalInformationTextArea,
+	SummaryContainer,
+	SummaryRow,
+	SummaryColLeft,
+	SummaryColRight,
+	BookYourStaySubmitButton,
 };
