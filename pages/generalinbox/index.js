@@ -77,7 +77,7 @@ function GeneralInbox({ enquiries }) {
 										<td>{enquiry.attributes.email}</td>
 										<td>{enquiry.attributes.message}</td>
 										<td>
-											<Link href='mailto:'>
+											<Link href='mailto:user@user.com'>
 												<AdminFunctionalityLink>Open</AdminFunctionalityLink>
 											</Link>
 										</td>
