@@ -88,17 +88,17 @@ const Navbar = ({ toggle }) => {
 							</Navlink>
 							<Navlink>
 								<Link href='/generalinbox'>
-									<a>> General Inbox</a>
+									<a>&gt; General Inbox</a>
 								</Link>
 							</Navlink>
 							<Navlink>
 								<Link href='/hotelenquiriesinbox'>
-									<a>> Enquiries</a>
+									<a>&gt; Enquiries</a>
 								</Link>
 							</Navlink>
 							<Navlink>
 								<Link href='/hotellocations'>
-									<a>> Locations</a>
+									<a>&gt; Locations</a>
 								</Link>
 							</Navlink>
 							<Navlink>
