@@ -4,7 +4,14 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { HotelEnquiriesInboxContainer } from '../../components/admin/hotelenquiriesinbox/HotelEnquiriesInboxElements';
+import {
+	HotelEnquiriesInboxContainer,
+	HotelEnquiriesInboxTable,
+	HotelEnquiriesInboxTableContainer,
+	HotelEnquiriesInboxTableHeadings,
+	HotelEnquiriesInboxStatusOpen,
+	HotelEnquiriesInboxStatusClosed,
+} from '../../components/admin/hotelenquiriesinbox/HotelEnquiriesInboxElements';
 import {
 	AdminReturnButton,
 	AdminReturnButtonWrapper,
@@ -30,6 +37,52 @@ function HotelEnquiriesInbox({ enquiries }) {
 			<Page title='Hotel Enquiries Inbox'>
 				<HotelEnquiriesInboxContainer>
 					<AdminTitle>Hotel Enquiries Inbox</AdminTitle>
+
+					<HotelEnquiriesInboxTableContainer>
+						<HotelEnquiriesInboxTable>
+							<thead>
+								<tr>
+									<th scope='row'>
+										<HotelEnquiriesInboxTableHeadings>
+											Booking Enquiry #
+										</HotelEnquiriesInboxTableHeadings>
+									</th>
+									<td>
+										<HotelEnquiriesInboxTableHeadings>
+											Name
+										</HotelEnquiriesInboxTableHeadings>
+									</td>
+									<td>
+										<HotelEnquiriesInboxTableHeadings>
+											Request Is Open
+										</HotelEnquiriesInboxTableHeadings>
+									</td>
+									<td>
+										<HotelEnquiriesInboxTableHeadings>
+											Admin
+										</HotelEnquiriesInboxTableHeadings>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								{enquiries.map((enquiry) => (
+									<tr key={enquiry.id}>
+										<th scope='row'>{enquiry.id}</th>
+										<td>
+											{enquiry.attributes.firstname}{' '}
+											{enquiry.attributes.lastname}
+										</td>
+										<td>{`${enquiry.attributes.status}`}</td>
+										<td>
+											<Link href={`/hotelenquiriesinbox/${enquiry.id}`}>
+												<a>Open Enquiry</a>
+											</Link>
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</HotelEnquiriesInboxTable>
+					</HotelEnquiriesInboxTableContainer>
 
 					<AdminReturnButtonWrapper>
 						<AdminReturnButton primary onClick={AdminReturnToDashboardHandle}>

@@ -31,6 +31,7 @@ function GeneralInbox({ enquiries }) {
 		event.preventDefault();
 		Router.push('/dashboard');
 	}
+
 	return (
 		<>
 			<Page title='General Enquiries Inbox'>
