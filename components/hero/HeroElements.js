@@ -20,6 +20,8 @@ const HeroContainer = styled.div`
 
 	${media.lessThan('medium')`
 		padding: 0 25px;
+
+		height: 55vh;
 	`}
 `;
 
@@ -55,10 +57,15 @@ const HeroSearchFormContainer = styled.div`
 	flex: 1 1 auto;
 	width: 35%;
 	position: relative;
+	margin-top: -20vh;
 
 	${media.lessThan('large')`
         width: 100%;
     `}
+
+	${media.lessThan('medium')`
+		margin-top: -22vh;
+	`}
 `;
 
 const HeroBlackBg = styled.div`
@@ -72,7 +79,7 @@ const HeroCities = styled.div`
 		font-size: var(--h6-mobile-size);
 	}
 
-	${media.lessThan('medium')`
+	${media.lessThan('large')`
         display: none;
     `}
 `;

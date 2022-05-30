@@ -1,6 +1,6 @@
 # this is Jessica's final exam project for FEU2
 
-## A hotel booking website with a theme - Holidaze for the Urban Traveler
+## A curated hotels booking website - Holidaze for the Urban Traveler
 
 ## Login information
 
