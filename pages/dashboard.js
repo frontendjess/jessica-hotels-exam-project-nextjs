@@ -9,8 +9,15 @@ import {
 } from '../components/admin/global/GlobalElements';
 import Page from '../components/page/Page';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 function Dashboard() {
+	useEffect(() => {
+		if (localStorage.getItem('jwt') === null) {
+			window.location.href = './login';
+		}
+	}, []);
+
 	const Router = useRouter();
 	function AdminToGeneralInboxHandle(event) {
 		event.preventDefault();

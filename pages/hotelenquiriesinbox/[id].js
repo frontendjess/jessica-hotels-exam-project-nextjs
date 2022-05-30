@@ -1,7 +1,6 @@
 import Page from '../../components/page/Page';
 import { BASE_URL } from '../../configs/configs';
 import axios from 'axios';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import {
