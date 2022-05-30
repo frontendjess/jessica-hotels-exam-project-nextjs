@@ -159,7 +159,7 @@ function Hero() {
 									alt='Oslo landscape of buildings'
 									width='250px'
 								/>
-								<h6>9 curated hotels available</h6>
+								<h6>8 curated hotels available</h6>
 							</div>
 						)}
 					</HeroCityOslo>
