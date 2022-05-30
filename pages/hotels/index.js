@@ -47,7 +47,7 @@ function Index({ hotels }) {
 								<HotelsButtons>
 									<HotelsSpecificButton primary>
 										{' '}
-										<Link href={`/hotels/${hotel.id}`}>
+										<Link href='/bookyourstay'>
 											<a>Book This Hotel</a>
 										</Link>
 									</HotelsSpecificButton>
