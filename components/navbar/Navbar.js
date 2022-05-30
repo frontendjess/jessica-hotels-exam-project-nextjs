@@ -87,16 +87,6 @@ const Navbar = ({ toggle }) => {
 								</Link>
 							</Navlink>
 							<Navlink>
-								<Link href='/hotellocations'>
-									<a>Hotel Locations</a>
-								</Link>
-							</Navlink>
-							<Navlink>
-								<Link href='/addhotel'>
-									<a>Add a Hotel</a>
-								</Link>
-							</Navlink>
-							<Navlink>
 								<Link href='/logout'>
 									<a onClick={handleOnClick}>Log Out</a>
 								</Link>

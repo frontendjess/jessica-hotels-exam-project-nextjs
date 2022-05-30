@@ -54,7 +54,7 @@ function HotelEnquiriesInbox({ enquiries }) {
 									</td>
 									<td>
 										<HotelEnquiriesInboxTableHeadings>
-											Request Is Open
+											Email
 										</HotelEnquiriesInboxTableHeadings>
 									</td>
 									<td>
@@ -72,7 +72,7 @@ function HotelEnquiriesInbox({ enquiries }) {
 											{enquiry.attributes.firstname}{' '}
 											{enquiry.attributes.lastname}
 										</td>
-										<td>{`${enquiry.attributes.status}`}</td>
+										<td>{enquiry.attributes.emailaddress}</td>
 										<td>
 											<Link href={`/hotelenquiriesinbox/${enquiry.id}`}>
 												<a>Open Enquiry</a>

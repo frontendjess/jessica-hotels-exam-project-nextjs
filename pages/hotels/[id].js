@@ -1,6 +1,4 @@
 import axios from 'axios';
-import Image from 'next/image';
-import styled from 'styled-components';
 import Page from '../../components/page/Page';
 import { BASE_URL } from '../../configs/configs';
 import {

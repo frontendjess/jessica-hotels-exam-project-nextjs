@@ -39,6 +39,11 @@ const HotelEnquiriesInboxTable = styled.table`
             display: block;
         `}
 	}
+
+	a {
+		color: var(--color-secondary);
+		cursor: pointer;
+	}
 `;
 
 const HotelEnquiriesInboxTableHeadings = styled.h6`

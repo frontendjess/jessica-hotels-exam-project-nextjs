@@ -169,6 +169,10 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
     }
 
+    .line {
+        border-bottom: solid 1px var(--color-gray);
+    }
+
     .simple-flex-row {
         display: flex;
         justify-content: center;
