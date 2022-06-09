@@ -14,7 +14,7 @@ Concept: Curated collection of hotels for the urban traveler. Merging the golden
 
 ## Description
 
-Goal: To take the skills learned over the last 2 years and take on an extensive project where the finished product should reflect our general development capabilities, in addition to visual and technical skills.
+Goal: To take the skills learned over the last 2 years and take on an extensive project where the finished product should reflect our general development capabilities, in addition to visual and technical skills. Website is fully responsive.
 
 Links:
 
