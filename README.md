@@ -58,7 +58,7 @@ Extra features I have added:
 
 ## Built With
 
-My project was built in Next.js, using Axios to send GET and POST requests, Heroku to deploy my API, headless CMS Strapi to build my API database, React-Select for my form, Styled-Components and Styled-Media-Query for styling, and Fontawesome for icons.
+My project was built in Next.js, bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), using Axios to send GET and POST requests, Heroku to deploy my API, headless CMS Strapi to build my API database, React-Select for my form, Styled-Components and Styled-Media-Query for styling, and Fontawesome for icons.
 
 - [Next.js](https://nextjs.org/)
 - [React.js](https://reactjs.org/)
