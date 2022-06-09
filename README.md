@@ -9,8 +9,8 @@ Concept: Curated collection of hotels for the urban traveler. Merging the golden
 ## Login information
 
 - admin login page https://holidazefortheurbantraveler.netlify.app/login
-- admin@admin.com
-- #Admin1234
+- username: admin@admin.com
+- password: #Admin1234
 
 ## Description
 
@@ -33,18 +33,19 @@ Sidenote: Please give a moment for the api load - I am using free account on Her
 Requirements for the website:
 
 - Visitor side
-  -- Homepage
-  -- Searchbar typeahead
-  -- A resuls pate with all hotels
-  -- The hotel specific page which displays all details about the hotel
-  -- An enquiry page
-  -- A contact page (different to enquiry page) which goes to the admin for Holidaze
+
+  - Homepage
+  - Searchbar typeahead
+  - A resuls pate with all hotels
+  - The hotel specific page which displays all details about the hotel
+  - An enquiry page
+  - A contact page (different to enquiry page) which goes to the admin for Holidaze
 
 - Admin side
-  -- Login section that makes use of JWT tokens
-  -- List of enquiries and new enquiries appear when user submits the form on the enquiry page
-  -- List of messages from contact form
-  -- Admin can create a new establishment
+  - Login section that makes use of JWT tokens
+  - List of enquiries and new enquiries appear when user submits the form on the enquiry page
+  - List of messages from contact form
+  - Admin can create a new establishment
 
 Extra features I have added:
 
